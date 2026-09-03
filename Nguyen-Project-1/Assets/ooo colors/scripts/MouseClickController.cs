@@ -32,8 +32,8 @@ public class MouseClickController : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            ColorObject colorObject =
-                hit.collider.GetComponent<ColorObject>();
+            ColorObjects colorObject =
+                hit.collider.GetComponent<ColorObjects>();
 
             if (colorObject != null)
             {

@@ -5,7 +5,7 @@ public class ColorMatchManager : MonoBehaviour
 {
     public static ColorMatchManager Instance;
 
-    public ColorObject[] colorObjects;
+    public ColorObjects[] colorObjects;
 
     public TMP_Text resultText;
 

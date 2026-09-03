@@ -1,54 +1,55 @@
-using System.Diagnostics;
+
 using UnityEngine;
 
-public class ColorObject : MonoBehaviour
+public class ColorObjects: MonoBehaviour
 {
-    public enum ColorState
-    {
-        Red,
-        Green,
-        Blue
-    }
+    
+public enum ColorState
+{
+Red,
+Green,
+Blue
+}
 
-    public Material redMaterial;
-    public Material greenMaterial;
-    public Material blueMaterial;
+public Material redMaterial;
+public Material greenMaterial;
+public Material blueMaterial;
 
-    public ColorState CurrentColor { get; private set; }
+public ColorState CurrentColor {get; private set; }
 
-    private Renderer rend;
+private Renderer rend;
 
-    private void Awake()
-    {
-        rend = GetComponent<Renderer>();
-    }
+private void Awake()
+{
+    rend = GetComponent<Renderer>();
+}
 
-    private void Start()
-    {
-        SetColor(ColorState.Red);
-    }
+private void Start()
+{
+  SetColor(ColorState.Red);
+}
 
-    public void CycleColor()
-    {
-        switch(CurrentColor)
+public void CycleColor()
+{
+    switch(CurrentColor)
         {
-            case ColorState.Red:
-                SetColor(ColorState.Green);
-                break;
-
-            case ColorState.Green:
-                SetColor(ColorState.Blue);
-                break;
-
-            case ColorState.Blue:
-                SetColor(ColorState.Red);
-                break;
+        
+        case ColorState.Red:
+    SetColor(ColorState.Green);
+    break;
+       
+    case ColorState.Green:
+    SetColor(ColorState.Blue);
+    break;
+       
+    case ColorState.Blue:
+    SetColor(ColorState.Red);
+    break;
         }
-
-        ColorMatchManager.Instance.CheckMatch();
-    }
-
-    private void SetColor(ColorState color)
+    ColorMatchManager.Instance.CheckMatch();   
+  
+}
+private void SetColor(ColorState color)
     {
         CurrentColor = color;
 
@@ -67,13 +68,4 @@ public class ColorObject : MonoBehaviour
                 break;
         }
     }
-}
-
-public enum ColorState
-{
-Red,
-
-Green,
-
-Blue
 }
