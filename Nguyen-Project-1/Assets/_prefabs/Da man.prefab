@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4647294873723775424}
   - component: {fileID: 8511358972789261960}
   - component: {fileID: 3794962755006449528}
-  - component: {fileID: 7402600196237938609}
+  - component: {fileID: 1194526359963849750}
   m_Layer: 0
   m_Name: Da man
   m_TagString: Player
@@ -115,7 +115,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7402600196237938609
+--- !u!114 &1194526359963849750
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,8 +124,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1085760799250158380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f74a2a1ffd5ad44d8bee1c2ded8a51d, type: 3}
+  m_Script: {fileID: 11500000, guid: f59c8da648a15e345a08c32228572f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 4.5
+  moveSpeed: 5
   moveAction: {fileID: -5811493528883913799, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
