@@ -5,7 +5,7 @@ public class PlayerGrab : MonoBehaviour
    public InputActionReference grabAction;
 
    public Transform holdPoint;
-
+public float carriedWeight = 0f;
    private GameObject heldObject;
 
     void Update()
@@ -34,6 +34,10 @@ public class PlayerGrab : MonoBehaviour
             if (grabObject != null && grabObject.playerInRange)
             {
                 heldObject = col.gameObject;
+
+               GrabObject grabData = heldObject.GetComponent<GrabObject>();
+               carriedWeight = grabData.weight;
+
                 Rigidbody rb = heldObject.GetComponent<Rigidbody>();
 
                 if (rb != null)
@@ -61,7 +65,7 @@ void DropObject()
             rb.isKinematic = false;
         
         }
-
+     carriedWeight = 0f;
         heldObject = null;
     }
 }

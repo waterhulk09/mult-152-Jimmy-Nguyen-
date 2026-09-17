@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Grabable
+  - Pickup
   layers:
   - Default
   - TransparentFX
