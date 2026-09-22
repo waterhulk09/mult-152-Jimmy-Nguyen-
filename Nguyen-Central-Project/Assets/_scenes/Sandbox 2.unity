@@ -1190,7 +1190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c5a0208b99b08449c4239cb872328e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrabObject
-  weight: 20
+  weight: 50
   playerInRange: 0
 --- !u!65 &886810503
 BoxCollider:
@@ -1618,6 +1618,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crate pickup
       objectReference: {fileID: 0}
+    - target: {fileID: 1032977212431697953, guid: 31b1329374be9134cbfdfb146ef51a8e, type: 3}
+      propertyPath: m_TagString
+      value: Pickup
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1673,21 +1677,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Da man
       objectReference: {fileID: 0}
-    - target: {fileID: 6637743858238611275, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
-      propertyPath: m_Constraints
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 8739158384974384068, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.2238648
-      objectReference: {fileID: 0}
     - target: {fileID: 8739158384974384068, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.06830014
       objectReference: {fileID: 0}
     - target: {fileID: 8739158384974384068, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.98
+      value: 1.632
       objectReference: {fileID: 0}
     - target: {fileID: 8739158384974384068, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1724,36 +1720,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1085760799250158380, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1949495458}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
---- !u!1 &1949495457 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1085760799250158380, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
-  m_PrefabInstance: {fileID: 1949495456}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1949495458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949495457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08edd4cff57b268479638897cbe40c7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerJump
-  jumpHeight: 8
-  jumpAction: {fileID: 5245023704386680650, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
-  groundCheck: {fileID: 873782133}
-  groundDistance: 0.25
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  playerGrab: {fileID: 0}
 --- !u!1001 &2071204414
 PrefabInstance:
   m_ObjectHideFlags: 0
