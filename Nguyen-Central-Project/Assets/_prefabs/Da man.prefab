@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1194526359963849750}
   - component: {fileID: 6637743858238611275}
   - component: {fileID: 7276860702964899983}
+  - component: {fileID: 7630834301401650116}
   m_Layer: 0
   m_Name: Da man
   m_TagString: Player
@@ -33,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.93, z: 0}
-  m_LocalScale: {x: 1.2454, y: 1.67, z: 1.0873}
+  m_LocalScale: {x: 1.2454, y: 1.67, z: 1.2238648}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7335561616606890372}
@@ -168,10 +169,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &7276860702964899983
 MonoBehaviour:
@@ -187,6 +188,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerGrab
   grabAction: {fileID: -1400922984753698516, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
   holdPoint: {fileID: 7335561616606890372}
+  carriedWeight: 0
+--- !u!114 &7630834301401650116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085760799250158380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08edd4cff57b268479638897cbe40c7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerJump
+  jumpHeight: 8
+  jumpAction: {fileID: 5245023704386680650, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
+  groundCheck: {fileID: 0}
+  groundDistance: 0.25
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  playerGrab: {fileID: 7276860702964899983}
+  jumpForce: 8
 --- !u!1 &3663920583417017928
 GameObject:
   m_ObjectHideFlags: 0
