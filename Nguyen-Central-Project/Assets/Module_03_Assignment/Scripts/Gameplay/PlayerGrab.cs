@@ -5,8 +5,12 @@ public class PlayerGrab : MonoBehaviour
    public InputActionReference grabAction;
 
    public Transform holdPoint;
-public float carriedWeight = 0f;
    private GameObject heldObject;
+
+public string carriedItemName = "Nothing";
+public float carriedWeight = 0f;
+ 
+ [HideInInspector]
 
     void Update()
     {
@@ -31,12 +35,16 @@ public float carriedWeight = 0f;
         {
             GrabObject grabObject = col.GetComponent<GrabObject>();
 
+            carriedItemName = grabObject.ItemName;
+            carriedWeight = grabObject.weight;
+
             if (grabObject != null && grabObject.playerInRange)
             {
                 heldObject = col.gameObject;
 
                GrabObject grabData = heldObject.GetComponent<GrabObject>();
-               carriedWeight = grabData.weight;
+               carriedItemName = grabObject.ItemName;
+               carriedWeight = grabObject.weight;
 
                 Rigidbody rb = heldObject.GetComponent<Rigidbody>();
 
@@ -45,8 +53,8 @@ public float carriedWeight = 0f;
                     rb.isKinematic = true;
                 }
         
-        heldObject.transform.SetParent(holdPoint);
-         heldObject.transform.localPosition = Vector3.zero;
+                  heldObject.transform.SetParent(holdPoint);
+                  heldObject.transform.localPosition = Vector3.zero;
 
          return;
             }
@@ -65,7 +73,10 @@ void DropObject()
             rb.isKinematic = false;
         
         }
-     carriedWeight = 0f;
+     
+     
         heldObject = null;
+        carriedItemName = "Nothing";
+         carriedWeight = 0f;
     }
 }
