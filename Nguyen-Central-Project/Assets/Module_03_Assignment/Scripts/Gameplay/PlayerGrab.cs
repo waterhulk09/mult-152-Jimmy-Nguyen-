@@ -5,12 +5,20 @@ public class PlayerGrab : MonoBehaviour
    public InputActionReference grabAction;
 
    public Transform holdPoint;
-   private GameObject heldObject;
+   
+    [HideInInspector]
+   public GameObject heldObject;
 
 public string carriedItemName = "Nothing";
 public float carriedWeight = 0f;
  
  [HideInInspector]
+
+public GameObject HeldObject
+    {
+        get { return heldObject; }
+    }
+    
 
     void Update()
     {
@@ -36,6 +44,7 @@ public float carriedWeight = 0f;
             GrabObject grabObject = col.GetComponent<GrabObject>();
 
             carriedItemName = grabObject.ItemName;
+            
             carriedWeight = grabObject.weight;
 
             if (grabObject != null && grabObject.playerInRange)
@@ -79,4 +88,17 @@ void DropObject()
         carriedItemName = "Nothing";
          carriedWeight = 0f;
     }
+   
+    public void ReleaseHeldObject()
+    {
+        if (heldObject == null) return;
+
+        heldObject.transform.SetParent(null);
+
+        carriedItemName = "Nothing";
+        carriedWeight = 0;
+
+        heldObject = null;
+    }
+
 }

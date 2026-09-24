@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Grabable
   - Pickup
+  - Enemy
   layers:
   - Default
   - TransparentFX

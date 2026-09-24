@@ -6,6 +6,9 @@ public class GrabObject : MonoBehaviour
 [Header("Object Weight")]
 public float weight = 10f;
 
+[Header("Attack Settings")]
+public bool canbeThrown = false;
+
 [Header("item info")]
 public string ItemName = "New Item";
 

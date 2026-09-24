@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 34336280}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Grabable
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrabObject
   weight: 5
+  canbeThrown: 1
   ItemName: stone
   playerInRange: 0
 --- !u!135 &34336281
@@ -1241,6 +1242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrabObject
   weight: 50
+  canbeThrown: 0
   ItemName: Brick
   playerInRange: 0
 --- !u!65 &886810503
@@ -1628,12 +1630,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0de0079dc1d141b436c638131db30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickup
+--- !u!1 &1402996952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1085760799250158380, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
+  m_PrefabInstance: {fileID: 1949495456}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1402996953 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7630834301401650116, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
   m_PrefabInstance: {fileID: 1949495456}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1402996952}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08edd4cff57b268479638897cbe40c7a, type: 3}
@@ -1644,12 +1651,27 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7276860702964899983, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
   m_PrefabInstance: {fileID: 1949495456}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1402996952}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2db58e2540d672c45827f62a1de320f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerGrab
+--- !u!114 &1402996962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402996952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 045011812b5aab244b401031803a8738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerThrow
+  throwAction: {fileID: -3558929643896798508, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
+  playerGrab: {fileID: 1402996954}
+  throwForce: 20
 --- !u!1001 &1492169368
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2116,7 +2138,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1085760799250158380, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1402996962}
   m_SourcePrefab: {fileID: 100100000, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
 --- !u!1001 &2071204414
 PrefabInstance:
