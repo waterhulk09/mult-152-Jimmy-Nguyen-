@@ -12,11 +12,12 @@ GameObject:
   - component: {fileID: 4647294873723775424}
   - component: {fileID: 8511358972789261960}
   - component: {fileID: 3794962755006449528}
-  - component: {fileID: 5312034772503150167}
-  - component: {fileID: 1194526359963849750}
   - component: {fileID: 6637743858238611275}
-  - component: {fileID: 7276860702964899983}
-  - component: {fileID: 7630834301401650116}
+  - component: {fileID: 3683436581458091849}
+  - component: {fileID: 750218719274376095}
+  - component: {fileID: 612030595527057284}
+  - component: {fileID: 4528740378977356614}
+  - component: {fileID: 1880740169014375488}
   m_Layer: 0
   m_Name: Da man
   m_TagString: Player
@@ -121,33 +122,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5312034772503150167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085760799250158380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b09ee46b01ba824c888b6fe88ffe872, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DamageOnTouch
-  damageAmount: 10
---- !u!114 &1194526359963849750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085760799250158380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f59c8da648a15e345a08c32228572f32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 5
-  moveAction: {fileID: -5811493528883913799, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
 --- !u!54 &6637743858238611275
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -175,7 +149,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &7276860702964899983
+--- !u!114 &3683436581458091849
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,13 +158,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1085760799250158380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2db58e2540d672c45827f62a1de320f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e5d1f0f9d9ef964bacd4ab2feef5eca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageOnTouch
+  damageAmount: 10
+--- !u!114 &750218719274376095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085760799250158380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 618a90637118917498b58f7ae5f45558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerGrab
   grabAction: {fileID: -1400922984753698516, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
-  holdPoint: {fileID: 7335561616606890372}
+  holdPoint: {fileID: 8739158384974384068}
+  heldObject: {fileID: 0}
+  carriedItemName: Nothing
   carriedWeight: 0
---- !u!114 &7630834301401650116
+--- !u!114 &612030595527057284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,7 +188,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1085760799250158380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08edd4cff57b268479638897cbe40c7a, type: 3}
+  m_Script: {fileID: 11500000, guid: ce69288bbd19d18458b1429c7278e9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerJump
   jumpHeight: 8
@@ -209,8 +198,37 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  playerGrab: {fileID: 7276860702964899983}
+  playerGrab: {fileID: 750218719274376095}
   jumpForce: 8
+--- !u!114 &4528740378977356614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085760799250158380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ef0907b42be5c64d94f654b8df18b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  moveSpeed: 5
+  moveAction: {fileID: -5811493528883913799, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
+--- !u!114 &1880740169014375488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085760799250158380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa58d159858d354382587fe5659e984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerThrow
+  throwAction: {fileID: 0}
+  playerGrab: {fileID: 0}
+  throwForce: 20
 --- !u!1 &3663920583417017928
 GameObject:
   m_ObjectHideFlags: 0

@@ -306,10 +306,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1331780878082401126, guid: e6bf21041c1fb104aa70c1099282cd2b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1329360739}
+      addedObject: {fileID: 1329360736}
     - targetCorrespondingSourceObject: {fileID: 1331780878082401126, guid: e6bf21041c1fb104aa70c1099282cd2b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1329360736}
+      addedObject: {fileID: 1329360741}
   m_SourcePrefab: {fileID: 100100000, guid: e6bf21041c1fb104aa70c1099282cd2b, type: 3}
 --- !u!1 &250874480
 GameObject:
@@ -608,10 +608,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1331780878082401126, guid: e6bf21041c1fb104aa70c1099282cd2b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 534463090}
+      addedObject: {fileID: 534463087}
     - targetCorrespondingSourceObject: {fileID: 1331780878082401126, guid: e6bf21041c1fb104aa70c1099282cd2b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 534463087}
+      addedObject: {fileID: 534463092}
   m_SourcePrefab: {fileID: 100100000, guid: e6bf21041c1fb104aa70c1099282cd2b, type: 3}
 --- !u!1001 &408663981
 PrefabInstance:
@@ -671,10 +671,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1331780878082401126, guid: e6bf21041c1fb104aa70c1099282cd2b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 530473263}
+      addedObject: {fileID: 530473260}
     - targetCorrespondingSourceObject: {fileID: 1331780878082401126, guid: e6bf21041c1fb104aa70c1099282cd2b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 530473260}
+      addedObject: {fileID: 530473265}
   m_SourcePrefab: {fileID: 100100000, guid: e6bf21041c1fb104aa70c1099282cd2b, type: 3}
 --- !u!1 &465112394
 GameObject:
@@ -983,7 +983,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &530473263
+--- !u!114 &530473265
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -992,7 +992,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 530473259}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eb0de0079dc1d141b436c638131db30, type: 3}
+  m_Script: {fileID: 11500000, guid: 58541218d0c67504e9c66e85cdcd0585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickup
 --- !u!1 &534463086 stripped
@@ -1021,7 +1021,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &534463090
+--- !u!114 &534463092
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1030,7 +1030,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 534463086}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eb0de0079dc1d141b436c638131db30, type: 3}
+  m_Script: {fileID: 11500000, guid: 58541218d0c67504e9c66e85cdcd0585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickup
 --- !u!1001 &660772586
@@ -1095,6 +1095,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1331780878082401126, guid: e6bf21041c1fb104aa70c1099282cd2b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1184574667}
+    - targetCorrespondingSourceObject: {fileID: 1331780878082401126, guid: e6bf21041c1fb104aa70c1099282cd2b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1184574672}
   m_SourcePrefab: {fileID: 100100000, guid: e6bf21041c1fb104aa70c1099282cd2b, type: 3}
 --- !u!1 &873782129
 GameObject:
@@ -1592,6 +1595,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0de0079dc1d141b436c638131db30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickup
+--- !u!114 &1184574672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184574666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58541218d0c67504e9c66e85cdcd0585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pickup
 --- !u!1 &1329360735 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1331780878082401126, guid: e6bf21041c1fb104aa70c1099282cd2b, type: 3}
@@ -1618,7 +1633,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1329360739
+--- !u!114 &1329360741
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1627,14 +1642,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1329360735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eb0de0079dc1d141b436c638131db30, type: 3}
+  m_Script: {fileID: 11500000, guid: 58541218d0c67504e9c66e85cdcd0585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickup
---- !u!1 &1402996952 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1085760799250158380, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
-  m_PrefabInstance: {fileID: 1949495456}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1492169368
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1697,6 +1707,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1331780878082401126, guid: e6bf21041c1fb104aa70c1099282cd2b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2092947563}
+    - targetCorrespondingSourceObject: {fileID: 1331780878082401126, guid: e6bf21041c1fb104aa70c1099282cd2b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2092947568}
   m_SourcePrefab: {fileID: 100100000, guid: e6bf21041c1fb104aa70c1099282cd2b, type: 3}
 --- !u!1 &1524272478
 GameObject:
@@ -1859,10 +1872,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1331780878082401126, guid: e6bf21041c1fb104aa70c1099282cd2b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1913825689}
+      addedObject: {fileID: 1913825686}
     - targetCorrespondingSourceObject: {fileID: 1331780878082401126, guid: e6bf21041c1fb104aa70c1099282cd2b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1913825686}
+      addedObject: {fileID: 1913825691}
   m_SourcePrefab: {fileID: 100100000, guid: e6bf21041c1fb104aa70c1099282cd2b, type: 3}
 --- !u!1001 &1798855498
 PrefabInstance:
@@ -1916,44 +1929,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crate pickup
       objectReference: {fileID: 0}
-    - target: {fileID: 1032977212431697953, guid: 31b1329374be9134cbfdfb146ef51a8e, type: 3}
-      propertyPath: m_TagString
-      value: Pickup
-      objectReference: {fileID: 0}
-    - target: {fileID: 4999091921329562468, guid: 31b1329374be9134cbfdfb146ef51a8e, type: 3}
-      propertyPath: ItemName
-      value: Crate
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4999091921329562468, guid: 31b1329374be9134cbfdfb146ef51a8e, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1032977212431697953, guid: 31b1329374be9134cbfdfb146ef51a8e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1798855500}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31b1329374be9134cbfdfb146ef51a8e, type: 3}
---- !u!1 &1798855499 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1032977212431697953, guid: 31b1329374be9134cbfdfb146ef51a8e, type: 3}
-  m_PrefabInstance: {fileID: 1798855498}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1798855500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798855499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9209fd472a0aa740bedcdf923b8b11c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GrabObject
-  weight: 15
-  canbeThrown: 0
-  ItemName: Box
-  playerInRange: 0
 --- !u!1 &1885604718
 GameObject:
   m_ObjectHideFlags: 0
@@ -2059,7 +2039,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1913825689
+--- !u!114 &1913825691
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2068,7 +2048,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1913825685}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eb0de0079dc1d141b436c638131db30, type: 3}
+  m_Script: {fileID: 11500000, guid: 58541218d0c67504e9c66e85cdcd0585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickup
 --- !u!1001 &1949495456
@@ -2083,6 +2063,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Da man
       objectReference: {fileID: 0}
+    - target: {fileID: 1880740169014375488, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
+      propertyPath: playerGrab
+      value: 
+      objectReference: {fileID: 1949495462}
+    - target: {fileID: 1880740169014375488, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
+      propertyPath: throwAction
+      value: 
+      objectReference: {fileID: -3558929643896798508, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
     - target: {fileID: 8739158384974384068, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.06830014
@@ -2123,120 +2111,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5312034772503150167, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
-    - {fileID: 1194526359963849750, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
-    - {fileID: 7276860702964899983, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
-    - {fileID: 7630834301401650116, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1085760799250158380, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1949495463}
-    - targetCorrespondingSourceObject: {fileID: 1085760799250158380, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1949495462}
-    - targetCorrespondingSourceObject: {fileID: 1085760799250158380, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1949495461}
-    - targetCorrespondingSourceObject: {fileID: 1085760799250158380, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1949495460}
-    - targetCorrespondingSourceObject: {fileID: 1085760799250158380, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1949495459}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
---- !u!4 &1949495457 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7535362558974223620, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
+--- !u!114 &1949495461 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 612030595527057284, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
   m_PrefabInstance: {fileID: 1949495456}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1949495458 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8739158384974384068, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
-  m_PrefabInstance: {fileID: 1949495456}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1949495459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402996952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aa58d159858d354382587fe5659e984, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerThrow
-  throwAction: {fileID: 0}
-  playerGrab: {fileID: 0}
-  throwForce: 20
---- !u!114 &1949495460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402996952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ef0907b42be5c64d94f654b8df18b06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 5
-  moveAction: {fileID: -5811493528883913799, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
---- !u!114 &1949495461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402996952}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce69288bbd19d18458b1429c7278e9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerJump
-  jumpHeight: 8
-  jumpAction: {fileID: 5245023704386680650, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
-  groundCheck: {fileID: 1949495457}
-  groundDistance: 0.25
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  playerGrab: {fileID: 1949495462}
-  jumpForce: 8
---- !u!114 &1949495462
+--- !u!114 &1949495462 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 750218719274376095, guid: 475dbafcd6b5ab24d932a832c32f9a90, type: 3}
+  m_PrefabInstance: {fileID: 1949495456}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402996952}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 618a90637118917498b58f7ae5f45558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerGrab
-  grabAction: {fileID: -1400922984753698516, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
-  holdPoint: {fileID: 1949495458}
-  heldObject: {fileID: 0}
-  carriedItemName: Nothing
-  carriedWeight: 0
---- !u!114 &1949495463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402996952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e5d1f0f9d9ef964bacd4ab2feef5eca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DamageOnTouch
-  damageAmount: 10
 --- !u!1001 &2071204414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2353,6 +2254,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9eb0de0079dc1d141b436c638131db30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pickup
+--- !u!114 &2092947568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092947562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58541218d0c67504e9c66e85cdcd0585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickup
 --- !u!1660057539 &9223372036854775807

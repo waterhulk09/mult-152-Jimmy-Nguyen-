@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 72837d3e276cf2e408ccfbd7b881f222, type: 3}
       propertyPath: m_TagString
-      value: Grabable
+      value: Pickup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -69,7 +69,7 @@ PrefabInstance:
       addedObject: {fileID: 540179836838024561}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 72837d3e276cf2e408ccfbd7b881f222, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4999091921329562468}
+      addedObject: {fileID: 108106004824079803}
   m_SourcePrefab: {fileID: 100100000, guid: 72837d3e276cf2e408ccfbd7b881f222, type: 3}
 --- !u!1 &1032977212431697953 stripped
 GameObject:
@@ -97,7 +97,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.79999995, y: 0.8, z: 0.8}
   m_Center: {x: 0, y: 0.39999995, z: -0.000000029802322}
---- !u!114 &4999091921329562468
+--- !u!114 &108106004824079803
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,8 +106,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1032977212431697953}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4c5a0208b99b08449c4239cb872328e, type: 3}
+  m_Script: {fileID: 11500000, guid: d9209fd472a0aa740bedcdf923b8b11c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrabObject
-  weight: 10
+  weight: 15
+  canbeThrown: 0
+  ItemName: Box
   playerInRange: 0
