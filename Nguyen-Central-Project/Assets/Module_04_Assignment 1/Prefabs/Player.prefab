@@ -72,14 +72,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8001293988462269888, guid: 794e5e91bef009446aadfed820d2a610, type: 3}
-      propertyPath: health
-      value: 130
-      objectReference: {fileID: 0}
-    - target: {fileID: 8001293988462269888, guid: 794e5e91bef009446aadfed820d2a610, type: 3}
-      propertyPath: moveSpeed
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 8706527254536195350, guid: 794e5e91bef009446aadfed820d2a610, type: 3}
       propertyPath: m_Name
       value: Person Slow
@@ -94,20 +86,20 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8706527254536195350, guid: 794e5e91bef009446aadfed820d2a610, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4492214519080101831}
+      addedObject: {fileID: 2788475830358844122}
     - targetCorrespondingSourceObject: {fileID: 8706527254536195350, guid: 794e5e91bef009446aadfed820d2a610, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5179056373840618938}
+      addedObject: {fileID: 403680120806136108}
     - targetCorrespondingSourceObject: {fileID: 8706527254536195350, guid: 794e5e91bef009446aadfed820d2a610, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 631062901745079197}
+      addedObject: {fileID: 7545650286075854026}
   m_SourcePrefab: {fileID: 100100000, guid: 794e5e91bef009446aadfed820d2a610, type: 3}
 --- !u!1 &3558984568600650344 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8706527254536195350, guid: 794e5e91bef009446aadfed820d2a610, type: 3}
   m_PrefabInstance: {fileID: 5311927536897945470}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4492214519080101831
+--- !u!114 &2788475830358844122
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 5
   moveAction: {fileID: -5811493528883913799, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
---- !u!114 &5179056373840618938
+--- !u!114 &403680120806136108
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageOnTouch
   damageAmount: 10
---- !u!54 &631062901745079197
+--- !u!54 &7545650286075854026
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
