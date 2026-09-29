@@ -10,7 +10,7 @@ public float weight = 10f;
 public bool canbeThrown = false;
 
 [Header("item info")]
-public string ItemName = "New Item";
+public string itemName = "New Item";
 
 
 [HideInInspector]

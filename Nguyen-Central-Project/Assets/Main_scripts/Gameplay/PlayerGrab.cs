@@ -43,16 +43,12 @@ public GameObject HeldObject
         {
             GrabObject grabObject = col.GetComponent<GrabObject>();
 
-            carriedItemName = grabObject.ItemName;
-            
-            carriedWeight = grabObject.weight;
-
             if (grabObject != null && grabObject.playerInRange)
             {
                 heldObject = col.gameObject;
 
                GrabObject grabData = heldObject.GetComponent<GrabObject>();
-               carriedItemName = grabObject.ItemName;
+               carriedItemName = grabObject.itemName;
                carriedWeight = grabObject.weight;
 
                 Rigidbody rb = heldObject.GetComponent<Rigidbody>();

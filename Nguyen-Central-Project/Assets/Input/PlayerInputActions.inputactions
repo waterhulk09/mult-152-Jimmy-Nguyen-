@@ -55,6 +55,16 @@
                     "interactions": "",
                     "initialStateCheck": false,
                     "priority": 0
+                },
+                {
+                    "name": "Cycle Target",
+                    "type": "Button",
+                    "id": "61e26961-b20f-4abe-83c8-56dec5321bc1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
                 }
             ],
             "bindings": [
@@ -154,6 +164,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Throw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c63f724b-c509-4a70-91f4-818cb6a05ec4",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cycle Target",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

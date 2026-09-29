@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 612030595527057284}
   - component: {fileID: 4528740378977356614}
   - component: {fileID: 1880740169014375488}
+  - component: {fileID: 93178539431918626}
   m_Layer: 0
   m_Name: Da man
   m_TagString: Player
@@ -156,7 +157,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085760799250158380}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e5d1f0f9d9ef964bacd4ab2feef5eca, type: 3}
   m_Name: 
@@ -175,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerGrab
   grabAction: {fileID: -1400922984753698516, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
-  holdPoint: {fileID: 8739158384974384068}
+  holdPoint: {fileID: 7335561616606890372}
   heldObject: {fileID: 0}
   carriedItemName: Nothing
   carriedWeight: 0
@@ -226,9 +227,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa58d159858d354382587fe5659e984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerThrow
-  throwAction: {fileID: 0}
-  playerGrab: {fileID: 0}
+  throwAction: {fileID: -3558929643896798508, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
+  playerGrab: {fileID: 750218719274376095}
   throwForce: 20
+--- !u!114 &93178539431918626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085760799250158380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b555085eaac8a74dafb4f1708f926f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RockProjectile
+  damage: 10
 --- !u!1 &3663920583417017928
 GameObject:
   m_ObjectHideFlags: 0
