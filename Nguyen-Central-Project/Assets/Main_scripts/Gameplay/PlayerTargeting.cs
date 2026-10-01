@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 
 public class PlayerTargeting : MonoBehaviour
 {
@@ -10,6 +9,8 @@ public class PlayerTargeting : MonoBehaviour
     private List<EnemyTarget> enemies = new List<EnemyTarget>();
 
     private int currentIndex = -1;
+
+    private EnemyTarget previousTarget;
 
     public EnemyTarget CurrentTarget
     {
@@ -59,6 +60,17 @@ public class PlayerTargeting : MonoBehaviour
         {
             return;
         }
+    
+        
+        if(previousTarget != null)
+        {
+            Renderer oldR = previousTarget.GetComponent<Renderer>();
+
+            if(oldR != null)
+            {
+                oldR.material.SetColor("_BaseColor", Color.silver);
+            }
+        }
 
         currentIndex++;
 
@@ -67,6 +79,16 @@ public class PlayerTargeting : MonoBehaviour
             currentIndex = 0;
         }
 
+         previousTarget = CurrentTarget;
+
+
         Debug.Log("Target Selected: " + CurrentTarget.name);
+
+         Renderer r = CurrentTarget.GetComponent<Renderer>();
+         
+        if(r != null)
+        {
+            r.material.SetColor("_BaseColor", Color.cyan);
+        }
     }
 }

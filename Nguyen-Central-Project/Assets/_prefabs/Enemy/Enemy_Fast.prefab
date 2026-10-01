@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7346604669357063260}
   - component: {fileID: 4475077051479807945}
   - component: {fileID: 5805773294230039556}
+  - component: {fileID: 7607504703116620023}
   m_Layer: 0
   m_Name: Enemy_Fast
   m_TagString: Enemy
@@ -128,3 +129,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   health: 50
+--- !u!114 &7607504703116620023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347398278438424036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90cddb88550219f4980d0209e43705ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyTarget
