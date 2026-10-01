@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 254092697689271304}
   - component: {fileID: 2993766500899533400}
   - component: {fileID: 3432318694248680807}
+  - component: {fileID: 7372169900212989081}
   m_Layer: 0
   m_Name: Enemy_Base
   m_TagString: Enemy
@@ -128,3 +129,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   health: 50
+--- !u!114 &7372169900212989081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7057978347361485592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90cddb88550219f4980d0209e43705ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyTarget

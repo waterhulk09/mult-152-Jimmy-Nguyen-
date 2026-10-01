@@ -1,16 +1,72 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class PlayerTargeting : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public InputActionReference cycleTargetAction;
+
+    private List<EnemyTarget> enemies = new List<EnemyTarget>();
+
+    private int currentIndex = -1;
+
+    public EnemyTarget CurrentTarget
     {
-        
+        get
+        {
+            if (currentIndex < 0 || currentIndex >= enemies.Count)
+            {
+                return null;
+            }
+
+            return enemies[currentIndex];
+        }
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+        RefreshTargets();
+
+        Debug.Log("Enemies Found: " + enemies.Count);
+    }
+
     void Update()
     {
-        
+        if (Keyboard.current.tabKey.wasPressedThisFrame)
+        {
+            Debug.Log("Tab Pressed");
+        }
+        if (cycleTargetAction.action.triggered)
+        {
+            Debug.Log("Cycle Target Action");
+            CycleTarget();
+        }
+    }
+
+    public void RefreshTargets()
+    {
+        enemies.Clear();
+
+        EnemyTarget[] foundTargets = FindObjectsByType<EnemyTarget>(FindObjectsInactive.Include);
+
+        enemies.AddRange(foundTargets);
+    }
+
+    public void CycleTarget()
+    {
+        if (enemies.Count == 0)
+        {
+            return;
+        }
+
+        currentIndex++;
+
+        if (currentIndex >= enemies.Count)
+        {
+            currentIndex = 0;
+        }
+
+        Debug.Log("Target Selected: " + CurrentTarget.name);
     }
 }
