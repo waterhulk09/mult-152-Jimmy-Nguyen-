@@ -143,6 +143,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""priority"": 0
                 },
                 {
+<<<<<<< Updated upstream
                     ""name"": ""Cycle Target"",
                     ""type"": ""Button"",
                     ""id"": ""61e26961-b20f-4abe-83c8-56dec5321bc1"",
@@ -150,6 +151,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false,
+=======
+                    ""name"": ""Look"",
+                    ""type"": ""Value"",
+                    ""id"": ""8ac56070-975c-4f7c-ac9b-63fb40f8ac20"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true,
+>>>>>>> Stashed changes
                     ""priority"": 0
                 }
             ],
@@ -255,12 +265,21 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+<<<<<<< Updated upstream
                     ""id"": ""c63f724b-c509-4a70-91f4-818cb6a05ec4"",
                     ""path"": ""<Keyboard>/tab"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Cycle Target"",
+=======
+                    ""id"": ""005eba83-cf6f-433b-b34c-d52cc78071a4"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+>>>>>>> Stashed changes
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -276,7 +295,11 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Grab = m_Player.FindAction("Grab", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Throw = m_Player.FindAction("Throw", throwIfNotFound: true);
+<<<<<<< Updated upstream
         m_Player_CycleTarget = m_Player.FindAction("Cycle Target", throwIfNotFound: true);
+=======
+        m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
+>>>>>>> Stashed changes
     }
 
     ~@PlayerInputActions()
@@ -362,7 +385,11 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Grab;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Throw;
+<<<<<<< Updated upstream
     private readonly InputAction m_Player_CycleTarget;
+=======
+    private readonly InputAction m_Player_Look;
+>>>>>>> Stashed changes
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -395,9 +422,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Throw => m_Wrapper.m_Player_Throw;
         /// <summary>
+<<<<<<< Updated upstream
         /// Provides access to the underlying input action "Player/CycleTarget".
         /// </summary>
         public InputAction @CycleTarget => m_Wrapper.m_Player_CycleTarget;
+=======
+        /// Provides access to the underlying input action "Player/Look".
+        /// </summary>
+        public InputAction @Look => m_Wrapper.m_Player_Look;
+>>>>>>> Stashed changes
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -439,9 +472,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Throw.started += instance.OnThrow;
             @Throw.performed += instance.OnThrow;
             @Throw.canceled += instance.OnThrow;
+<<<<<<< Updated upstream
             @CycleTarget.started += instance.OnCycleTarget;
             @CycleTarget.performed += instance.OnCycleTarget;
             @CycleTarget.canceled += instance.OnCycleTarget;
+=======
+            @Look.started += instance.OnLook;
+            @Look.performed += instance.OnLook;
+            @Look.canceled += instance.OnLook;
+>>>>>>> Stashed changes
         }
 
         /// <summary>
@@ -468,9 +507,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Throw.started -= instance.OnThrow;
             @Throw.performed -= instance.OnThrow;
             @Throw.canceled -= instance.OnThrow;
+<<<<<<< Updated upstream
             @CycleTarget.started -= instance.OnCycleTarget;
             @CycleTarget.performed -= instance.OnCycleTarget;
             @CycleTarget.canceled -= instance.OnCycleTarget;
+=======
+            @Look.started -= instance.OnLook;
+            @Look.performed -= instance.OnLook;
+            @Look.canceled -= instance.OnLook;
+>>>>>>> Stashed changes
         }
 
         /// <summary>
@@ -547,11 +592,19 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnThrow(InputAction.CallbackContext context);
         /// <summary>
+<<<<<<< Updated upstream
         /// Method invoked when associated input action "Cycle Target" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+=======
+        /// Method invoked when associated input action "Look" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+>>>>>>> Stashed changes
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+<<<<<<< Updated upstream
         void OnCycleTarget(InputAction.CallbackContext context);
+=======
+        void OnLook(InputAction.CallbackContext context);
+>>>>>>> Stashed changes
     }
 }

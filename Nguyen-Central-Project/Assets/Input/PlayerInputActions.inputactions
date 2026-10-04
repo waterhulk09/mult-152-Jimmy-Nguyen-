@@ -57,6 +57,7 @@
                     "priority": 0
                 },
                 {
+<<<<<<< Updated upstream
                     "name": "Cycle Target",
                     "type": "Button",
                     "id": "61e26961-b20f-4abe-83c8-56dec5321bc1",
@@ -64,6 +65,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false,
+=======
+                    "name": "Look",
+                    "type": "Value",
+                    "id": "8ac56070-975c-4f7c-ac9b-63fb40f8ac20",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true,
+>>>>>>> Stashed changes
                     "priority": 0
                 }
             ],
@@ -169,12 +179,21 @@
                 },
                 {
                     "name": "",
+<<<<<<< Updated upstream
                     "id": "c63f724b-c509-4a70-91f4-818cb6a05ec4",
                     "path": "<Keyboard>/tab",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Cycle Target",
+=======
+                    "id": "005eba83-cf6f-433b-b34c-d52cc78071a4",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+>>>>>>> Stashed changes
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
