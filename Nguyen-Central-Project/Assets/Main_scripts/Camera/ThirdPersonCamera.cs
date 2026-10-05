@@ -16,7 +16,8 @@ public class ThirdPersonCamera : MonoBehaviour
     private float currentPitch = 20f;
     private void OnEnable()
     {
-        lookAction.action.Enable();
+    
+       Cursor.lockState = CursorLockMode.Locked;
     }
     private void OnDisable()
     {
@@ -37,13 +38,5 @@ public class ThirdPersonCamera : MonoBehaviour
             Vector3.up * height +
             offset;
         transform.LookAt(target.position + Vector3.up * 1.5f);
-    }
-
-    private void OnEnable()
-{
-    lookAction.action.Enable();
-    Cursor.lockState = CursorLockMode.Locked;
-    Cursor.visible = false;
-}
-  
+    }  
   }

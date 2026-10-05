@@ -28,11 +28,11 @@ Transform:
   m_GameObject: {fileID: 1504921291591752878}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8037, y: 1.8286994, z: 1.7579}
+  m_LocalPosition: {x: 1.7406296, y: 2.3277075, z: -3.468123}
+  m_LocalScale: {x: 7.3013334, y: 7.301333, z: 7.301332}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7126046542864465876}
+  m_Father: {fileID: 4550309295993987991}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8029792559007114854
 MeshFilter:
@@ -171,11 +171,11 @@ Transform:
   m_GameObject: {fileID: 2550866868173752570}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.377, y: 0.062, z: 0.788}
-  m_LocalScale: {x: 0.3321864, y: 0.33679053, z: 0.3237515}
+  m_LocalPosition: {x: 3.2667165, y: 2.575251, z: -0.19521189}
+  m_LocalScale: {x: 1.3446825, y: 1.3446823, z: 1.3446825}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7126046542864465876}
+  m_Father: {fileID: 4550309295993987991}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4451670191641691566
 MeshFilter:
@@ -283,11 +283,11 @@ Transform:
   m_GameObject: {fileID: 2973042160232277274}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.43, y: -0.583, z: 0.83500016}
-  m_LocalScale: {x: 0.24703705, y: 0.250461, z: 0.24076428}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7126046542864465876}
+  m_Father: {fileID: 4550309295993987991}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2082510958593452381
 MeshFilter:
@@ -426,11 +426,11 @@ Transform:
   m_GameObject: {fileID: 4573326047808410294}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5570751, y: 1.5786563, z: 1.5175377}
+  m_LocalPosition: {x: 1.7406296, y: 2.3277075, z: -3.468123}
+  m_LocalScale: {x: 6.303002, y: 6.303002, z: 6.303002}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7126046542864465876}
+  m_Father: {fileID: 4550309295993987991}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2252907028545282749
 MeshFilter:
@@ -538,11 +538,11 @@ Transform:
   m_GameObject: {fileID: 6287572832084350745}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.546, y: 0.04, z: 0.738}
-  m_LocalScale: {x: 0.3321864, y: 0.33679053, z: 0.3237515}
+  m_LocalPosition: {x: -0.46956515, y: 2.487413, z: -0.4028847}
+  m_LocalScale: {x: 1.3446825, y: 1.3446823, z: 1.3446825}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7126046542864465876}
+  m_Father: {fileID: 4550309295993987991}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2291942538056819047
 MeshFilter:
@@ -622,6 +622,42 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &6828699497398410568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4550309295993987991}
+  m_Layer: 0
+  m_Name: Slime
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4550309295993987991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6828699497398410568}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.43, y: -0.583, z: 0.83500004}
+  m_LocalScale: {x: 0.24703705, y: 0.250461, z: 0.24076428}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7644833731942940888}
+  - {fileID: 6283799055206775472}
+  - {fileID: 4579990187484307415}
+  - {fileID: 8212101505081037156}
+  - {fileID: 1753760895670927538}
+  m_Father: {fileID: 7126046542864465876}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8575419189772291461
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,9 +671,10 @@ GameObject:
   - component: {fileID: 8643224346924221504}
   - component: {fileID: 3194524974296980626}
   - component: {fileID: 1130993742743159395}
+  - component: {fileID: 8194323016889003597}
   m_Layer: 0
   m_Name: '3rdPersonCamera '
-  m_TagString: Player
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -650,13 +687,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8575419189772291461}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.377, z: 4.893}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.009999998, y: 1.0299999, z: -2.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7126046542864465876}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &4218972357878669808
 Camera:
   m_ObjectHideFlags: 0
@@ -871,7 +908,24 @@ MonoBehaviour:
   lookAction: {fileID: -4792524112817790244, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
   distance: 6
   height: 3
-  rotationSpeed: 31.4
+  rotationSpeed: 12
+  minPitch: -30
+  maxPitch: 60
+--- !u!114 &8194323016889003597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8575419189772291461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37bcd921fe223ff4abd4c0c7bb516aac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FPCameraLook
+  playerBody: {fileID: 7126046542864465876}
+  lookAction: {fileID: -4792524112817790244, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
+  lookSensitivity: 12
   minPitch: -30
   maxPitch: 60
 --- !u!1 &8706527254536195350
@@ -889,7 +943,7 @@ GameObject:
   - component: {fileID: 6990366097449780642}
   m_Layer: 0
   m_Name: BlueSlime
-  m_TagString: MainCamera
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -903,18 +957,14 @@ Transform:
   m_GameObject: {fileID: 8706527254536195350}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04, y: 1.07, z: 2.58}
+  m_LocalPosition: {x: 0.04, y: 1.67, z: 2.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 205545868516609125}
-  - {fileID: 7644833731942940888}
-  - {fileID: 6283799055206775472}
-  - {fileID: 4579990187484307415}
-  - {fileID: 8212101505081037156}
-  - {fileID: 1753760895670927538}
+  - {fileID: 4550309295993987991}
   - {fileID: 6127755922462145147}
   - {fileID: 1258625415877090386}
+  - {fileID: 205545868516609125}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &-5499019995646512776
@@ -942,7 +992,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!114 &5381350474182320248
 MonoBehaviour:
