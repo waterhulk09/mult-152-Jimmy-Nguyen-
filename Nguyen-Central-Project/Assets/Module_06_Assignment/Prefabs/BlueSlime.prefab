@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a7feb8bc2aa73f5439a379876d3cc81d, type: 2}
+  - {fileID: 2100000, guid: 0847fdb3b7d990b4b86fa08a14045b78, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -210,7 +210,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a8f92771cada85840bd4e444531d8067, type: 2}
+  - {fileID: 2100000, guid: 50d5af7ea99a72f49b8c61d388a9a100, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -322,7 +322,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a8f92771cada85840bd4e444531d8067, type: 2}
+  - {fileID: 2100000, guid: 50d5af7ea99a72f49b8c61d388a9a100, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -465,7 +465,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ea7bbb965cfb77a44a42e9ba7f298f52, type: 2}
+  - {fileID: 2100000, guid: bc33fb046000ad8458cd2baca848293e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -577,7 +577,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a8f92771cada85840bd4e444531d8067, type: 2}
+  - {fileID: 2100000, guid: 50d5af7ea99a72f49b8c61d388a9a100, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -871,7 +871,7 @@ MonoBehaviour:
   lookAction: {fileID: -4792524112817790244, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
   distance: 6
   height: 3
-  rotationSpeed: 72.5
+  rotationSpeed: 31.4
   minPitch: -30
   maxPitch: 60
 --- !u!1 &8706527254536195350
@@ -888,8 +888,8 @@ GameObject:
   - component: {fileID: 2439843115932611968}
   - component: {fileID: 6990366097449780642}
   m_Layer: 0
-  m_Name: Slime
-  m_TagString: Player
+  m_Name: BlueSlime
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -902,8 +902,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8706527254536195350}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.33, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.04, y: 1.07, z: 2.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -916,7 +916,7 @@ Transform:
   - {fileID: 6127755922462145147}
   - {fileID: 1258625415877090386}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &-5499019995646512776
 Rigidbody:
   m_ObjectHideFlags: 0
