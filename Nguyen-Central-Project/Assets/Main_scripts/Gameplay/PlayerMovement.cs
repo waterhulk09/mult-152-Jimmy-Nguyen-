@@ -14,8 +14,8 @@ public class PlayerMovement : MonoBehaviour
 float horizontal = move.x;
 float vertical = move.y;
 
-Vector3 movement =
-    transform.forward * vertical + transform.right * horizontal;
+Vector3 movement = transform.forward * vertical + transform.right * horizontal;
+
 transform.position += movement * moveSpeed * Time.deltaTime;
     
     //Debug.Log("Move: " + move + "| Player Position: " + transform.position);

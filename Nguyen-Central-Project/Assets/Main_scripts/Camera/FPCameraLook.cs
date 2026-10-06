@@ -10,16 +10,7 @@ public class FPCameraLook : MonoBehaviour
     public float minPitch = -80f;
     public float maxPitch = 80f;
     private float pitch = 0f;
-    private void OnEnable()
-    {
-        lookAction.action.Enable();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-    private void OnDisable()
-    {
-        lookAction.action.Disable();
-    }
+   
     void Update()
     {
         Vector2 lookInput = lookAction.action.ReadValue<Vector2>();

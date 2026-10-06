@@ -905,7 +905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThirdPersonCamera
   target: {fileID: 7126046542864465876}
-  lookAction: {fileID: -4792524112817790244, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
+  lookAction: {fileID: -5624989841260713980, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
   distance: 6
   height: 3
   rotationSpeed: 12
@@ -924,7 +924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FPCameraLook
   playerBody: {fileID: 7126046542864465876}
-  lookAction: {fileID: -4792524112817790244, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
+  lookAction: {fileID: -5624989841260713980, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
   lookSensitivity: 12
   minPitch: -30
   maxPitch: 60
