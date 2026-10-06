@@ -726,6 +726,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1130993742743159395, guid: f451a9d22769e624fbfed28dd5bcc5ee, type: 3}
+      propertyPath: lookAction
+      value: 
+      objectReference: {fileID: -5624989841260713980, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
     - target: {fileID: 7126046542864465876, guid: f451a9d22769e624fbfed28dd5bcc5ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.04
@@ -766,6 +770,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8194323016889003597, guid: f451a9d22769e624fbfed28dd5bcc5ee, type: 3}
+      propertyPath: lookAction
+      value: 
+      objectReference: {fileID: -5624989841260713980, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
     - target: {fileID: 8706527254536195350, guid: f451a9d22769e624fbfed28dd5bcc5ee, type: 3}
       propertyPath: m_Name
       value: BlueSlime
