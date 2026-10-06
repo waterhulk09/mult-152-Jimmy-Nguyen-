@@ -1,21 +1,20 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerCameraManager : MonoBehaviour
 {
-
-   [Header("Camera Objects")]
+    [Header("Camera Objects")]
     public GameObject firstPersonCamera;
     public GameObject thirdPersonCamera;
 
-[Header("Input Actions")]
-public InputActionReference toggleCameraAction;
-public InputActionReference aimAction;
+    [Header("Input")]
+    public InputActionReference toggleCameraAction;
+    public InputActionReference aimAction;
+    public PlayerTargeting targeting;
+    public InputActionReference lockOnAction;
 
-public PlayerTargeting targeting;
-public InputActionReference lockOnAction;
-
-[Header("Current Mode")]
+    [Header("Current Mode")]
     public CameraMode currentMode = CameraMode.ThirdPerson;
 
     private CameraMode previousMode;
@@ -36,24 +35,24 @@ public InputActionReference lockOnAction;
 
     void Start()
     {
-       Cursor.lockState = CursorLockMode.Locked;
-       Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
-       UpdateCameraState();
+        UpdateCameraState();
     }
 
     void Update()
     {
-       HandleToggleCamera();
-       HandleAimMode();
+        HandleCameraToggle();
+        HandleAimMode();
 
-       if(lock.action.triggered)
+        if (lockOnAction.action.triggered)
         {
             targeting.ToggleLock();
         }
     }
 
-void HandleToggleCamera()
+    void HandleCameraToggle()
     {
         if (!toggleCameraAction.action.triggered)
         {
@@ -68,98 +67,86 @@ void HandleToggleCamera()
         {
             currentMode = CameraMode.FirstPerson;
         }
-       
-        updateCameraState();
+
+        UpdateCameraState();
     }
 
-
-void ToggleMode()
+    void HandleAimMode()
     {
         if (currentMode == CameraMode.FirstPerson)
         {
-            currentMode = CameraMode.ThirdPerson;
-           
+            return;
+        }
+
+        if (aimAction.action.IsPressed())
+        {
+            if (currentMode != CameraMode.FocusAim)
+            {
+                previousMode = currentMode;
+                currentMode = CameraMode.FocusAim;
+
+                UpdateCameraState();
+            }
         }
         else
         {
-            currentMode = CameraMode.FirstPerson;
-            
-        }
-        
-        UpdateCameraMode();
-    }
-   
-   
-           Void HandleAimMode()
-        {
-
-            if (currentMode == CameraMode.FirstPerson)
-            {
-                return;
-            
-            }
-
-            if (aimAction.action.IsPressed())
-            {
-                 if (currentMode = CameraMode.FocusAim);
-                 {
-                    currentMode = CameraMode.ThirdPerson;
-
-                    updateCameraState();
-                 }
-            }
-            else
+            if (currentMode == CameraMode.FocusAim)
             {
                 currentMode = CameraMode.ThirdPerson;
+                
+                UpdateCameraState();
             }
+        }
+    }
 
-
-void UpdateCameraState()
-
+    void UpdateCameraState()
+    {
+        switch(currentMode)
         {
-          switch(currentMode)
-            {
-                case CameraMode.FirstPerson:
-                    firstPersonCamera.SetActive(true);
-                    thirdPersonCamera.SetActive(false);
-                    break;
-               
+            case CameraMode.FirstPerson:
+                
+                firstPersonCamera.SetActive(true);
+                thirdPersonCamera.SetActive(false);
+
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
 
+                Debug.Log("Camera: First Person");
+
                 break;
 
-                case CameraMode.ThirdPerson:
-                    firstPersonCamera.SetActive(false);
-                    thirdPersonCamera.SetActive(true);
-                    break;
+            case CameraMode.ThirdPerson:
+                
+                firstPersonCamera.SetActive(false);
+                thirdPersonCamera.SetActive(true);
 
-                case CameraMode.FocusAim:
-                    firstPersonCamera.SetActive(false);
-                    thirdPersonCamera.SetActive(true);
-                    break;
-             }
+                Debug.Log("Camera: Third Person");
+
+                break;
+
+            case CameraMode.FocusAim:
+                
+                firstPersonCamera.SetActive(false);
+                thirdPersonCamera.SetActive(true);
+
+                Debug.Log("Camera: Shoulder Aim");
+
+                break;
         }
-          }
-        
-        
-        public bool IsFirstPerson()
-           {
-               return currentMode == CameraMode.FirstPerson;
-           }
+    }
 
-           public bool IsThirdPerson()
-           {
-               return currentMode == CameraMode.ThirdPerson;
-           }
+    public bool IsFirstPerson()
+    {
+        return currentMode == CameraMode.FirstPerson;
+    }
 
-           public bool IsFocusAim()
-           {
-               return currentMode == CameraMode.FocusAim;
-           }
+    public bool IsThirdPerson()
+    {
+        return currentMode == CameraMode.ThirdPerson;
+    }
 
-
-           
-        
-        }
-        
+    public bool IsAiming()
+    {
+        return currentMode == CameraMode.FocusAim;
+    }
+}

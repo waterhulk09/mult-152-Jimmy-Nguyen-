@@ -6,11 +6,15 @@ public class PlayerTargeting : MonoBehaviour
 {
     public InputActionReference cycleTargetAction;
 
+    public bool IsLockedOn {get; private set;}
+
     private List<EnemyTarget> enemies = new List<EnemyTarget>();
 
     private int currentIndex = -1;
 
     private EnemyTarget previousTarget;
+
+    Color gray73 = new Color(0.7294f, 0.7294f, 0.7294f, 1f);
 
     public EnemyTarget CurrentTarget
     {
@@ -22,6 +26,38 @@ public class PlayerTargeting : MonoBehaviour
             }
 
             return enemies[currentIndex];
+        }
+    }
+
+    public EnemyTarget LockedTarget
+    {
+        get
+        {
+            if (currentIndex < 0 || currentIndex >= enemies.Count)
+            {
+                return null;
+            }
+            
+            return enemies[currentIndex];
+        }
+    }
+
+    public void ToggleLock()
+    {
+        if (enemies.Count == 0)
+        {
+            return;
+        }
+        
+        IsLockedOn = !IsLockedOn;
+
+        if (IsLockedOn)
+        {
+            Debug.Log("Locked: " + LockedTarget.name);
+        }
+        else
+        {
+            Debug.Log("Lock Released");
         }
     }
 
@@ -56,19 +92,20 @@ public class PlayerTargeting : MonoBehaviour
 
     public void CycleTarget()
     {
+
         if (enemies.Count == 0)
         {
             return;
         }
-    
-        
-        if(previousTarget != null)
+
+        //Rest Previous Color
+        if (previousTarget != null)
         {
             Renderer oldR = previousTarget.GetComponent<Renderer>();
 
-            if(oldR != null)
+            if (oldR != null)
             {
-                oldR.material.SetColor("_BaseColor", Color.silver);
+                oldR.material.SetColor("_BaseColor", gray73);
             }
         }
 
@@ -79,16 +116,15 @@ public class PlayerTargeting : MonoBehaviour
             currentIndex = 0;
         }
 
-         previousTarget = CurrentTarget;
-
+        previousTarget = CurrentTarget;
 
         Debug.Log("Target Selected: " + CurrentTarget.name);
 
-         Renderer r = CurrentTarget.GetComponent<Renderer>();
-         
-        if(r != null)
+        Renderer r = CurrentTarget.GetComponent<Renderer>();
+
+        if (r != null)
         {
-            r.material.SetColor("_BaseColor", Color.cyan);
+            r.material.SetColor("_BaseColor", Color.red);
         }
     }
 }

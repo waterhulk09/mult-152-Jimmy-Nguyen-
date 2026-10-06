@@ -1,39 +1,35 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 public class ThirdPersonCamera : MonoBehaviour
 {
     [Header("References")]
     public Transform target;
     public InputActionReference lookAction;
-
     public PlayerCameraManager cameraManager;
 
-
-[Header("offsets")]
-public Vector3 normalOffset = new Vector3(0f, 3f, -6f);
-public Vector3 focusOffset = new Vector3(1.25f, 2.5f, -3f);
-
-
     [Header("Camera Settings")]
-    public float distance = 6f;
-    public float height = 3f;
     public float rotationSpeed = 120f;
-   
+
     [Header("Pitch Limits")]
     public float minPitch = -30f;
     public float maxPitch = 60f;
+
+    [Header("Offsets")]
+    public Vector3 normalOffset = new Vector3(0f, 3f, -6f);
+    public Vector3 focusOffset = new Vector3(1.25f, 2.5f, -3f);
+
     private float currentYaw;
     private float currentPitch = 20f;
     private Vector3 currentOffset;
 
     public PlayerTargeting targeting;
-    
-      void Start()
+
+    void Start()
     {
         currentOffset = normalOffset;
     }
-    
-   
+
     void LateUpdate()
     {
         Vector2 lookInput = lookAction.action.ReadValue<Vector2>();
@@ -43,17 +39,16 @@ public Vector3 focusOffset = new Vector3(1.25f, 2.5f, -3f);
         Vector3 targetOffset = cameraManager.IsAiming() ? focusOffset : normalOffset;
         currentOffset = Vector3.Lerp(currentOffset, targetOffset, 8f * Time.deltaTime);
         Quaternion rotation = Quaternion.Euler(currentPitch, currentYaw, 0f);
-        
+
         Vector3 offset = rotation * currentOffset;
-        
-        if(targeting != null && targeting.IslockOn && targeting.LockedTarget != null)
+
+        if (targeting != null && targeting.IsLockedOn && targeting.LockedTarget != null)
         {
             transform.LookAt(targeting.LockedTarget.transform.position + Vector3.up * 1.5f);
             return;
         }
-        
-       transform.position = target.position + offset;
-       transform.LookAt(target.position + Vector3.up * 1.5f);
-      
-    }  
-  }
+
+        transform.position = target.position + offset;
+        transform.LookAt(target.position + Vector3.up * 1.5f);
+    }
+}
