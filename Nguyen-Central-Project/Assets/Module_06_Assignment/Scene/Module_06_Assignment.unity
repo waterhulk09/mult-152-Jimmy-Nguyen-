@@ -718,6 +718,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1726798144 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7126046542864465876, guid: f451a9d22769e624fbfed28dd5bcc5ee, type: 3}
+  m_PrefabInstance: {fileID: 3099454497573094093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3099454497573094093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -726,6 +731,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5499019995646512776, guid: f451a9d22769e624fbfed28dd5bcc5ee, type: 3}
+      propertyPath: m_Constraints
+      value: 122
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986353852648194277, guid: f451a9d22769e624fbfed28dd5bcc5ee, type: 3}
+      propertyPath: rotationSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351472618979837547, guid: f451a9d22769e624fbfed28dd5bcc5ee, type: 3}
+      propertyPath: playerBody
+      value: 
+      objectReference: {fileID: 1726798144}
+    - target: {fileID: 2351472618979837547, guid: f451a9d22769e624fbfed28dd5bcc5ee, type: 3}
+      propertyPath: lookSensitivity
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7126046542864465876, guid: f451a9d22769e624fbfed28dd5bcc5ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.04
