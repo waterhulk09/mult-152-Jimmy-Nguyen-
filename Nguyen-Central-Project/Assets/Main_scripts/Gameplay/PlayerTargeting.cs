@@ -124,7 +124,7 @@ public class PlayerTargeting : MonoBehaviour
 
         if (r != null)
         {
-            r.material.SetColor("_BaseColor", Color.red);
+            r.material.SetColor("_BaseColor", Color.cyan);
         }
     }
 }
