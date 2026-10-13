@@ -899,6 +899,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -5
       objectReference: {fileID: 0}
+    - target: {fileID: 7825390701555611070, guid: 1a8eac8c4f5ad464c924f615c91158c9, type: 3}
+      propertyPath: m_Color.b
+      value: 0.07062123
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825390701555611070, guid: 1a8eac8c4f5ad464c924f615c91158c9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.07062123
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825390701555611070, guid: 1a8eac8c4f5ad464c924f615c91158c9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6509434
+      objectReference: {fileID: 0}
     - target: {fileID: 8221045255551903128, guid: 1a8eac8c4f5ad464c924f615c91158c9, type: 3}
       propertyPath: m_Name
       value: PlayerHealthSlider
