@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour
 {
-   public int damage = 10;
+    public int damage = 10;
 
-   private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            Health health = other.gameObject.GetComponent<Health>();
+            Health health = other.GetComponent<Health>();
 
             if (health != null)
             {

@@ -2,15 +2,16 @@ using UnityEngine;
 
 public class EnemyThrow : MonoBehaviour
 {
-    [Header("Connections")]
+    [Header("Connection")]
     public Transform player;
-    public GameObject rockPrefab;
+
+    public GameObject projectilePrefab;
     public Transform throwPoint;
 
-    [Header("Throwing Settings")]
+    [Header("Settings")]
     public float throwForce = 15f;
     public float attackRange = 8f;
-    public float attackCooldown = 9f;
+    public float attackCooldown = 2f;
 
     private float timer;
 
@@ -23,18 +24,19 @@ public class EnemyThrow : MonoBehaviour
         if (distance <= attackRange && timer >= attackCooldown)
         {
             ThrowProjectile();
+
             timer = 0f;
         }
     }
 
     void ThrowProjectile()
     {
-        GameObject projectile = Instantiate(rockPrefab, throwPoint.position, Quaternion.identity);
-        
+        GameObject projectile = Instantiate(projectilePrefab, throwPoint.position, Quaternion.identity);
+
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
 
         Vector3 direction = (player.position - throwPoint.position).normalized;
-        
-        rb.AddForce(direction * throwForce, ForceMode.Impulse);
+
+        rb.AddForce(direction*throwForce, ForceMode.Impulse);
     }
 }
