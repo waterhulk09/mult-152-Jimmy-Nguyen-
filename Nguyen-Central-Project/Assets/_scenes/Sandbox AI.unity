@@ -564,9 +564,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1026673772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b6d5f5793a1c8f44b710aa5829bdcfe, type: 3}
+  m_Script: {fileID: 11500000, guid: 238f9433d0b55ec448b4feedf703ad70, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyChasePlayer
   target: {fileID: 2120344846}
 --- !u!1 &1139928458
 GameObject:
@@ -690,10 +690,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7057978347361485592, guid: befc683ab8c26bc4d81fe8da0868f9b8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1026673774}
+      addedObject: {fileID: 1026673773}
     - targetCorrespondingSourceObject: {fileID: 7057978347361485592, guid: befc683ab8c26bc4d81fe8da0868f9b8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1026673773}
+      addedObject: {fileID: 1026673774}
   m_SourcePrefab: {fileID: 100100000, guid: befc683ab8c26bc4d81fe8da0868f9b8, type: 3}
 --- !u!4 &2120344846 stripped
 Transform:

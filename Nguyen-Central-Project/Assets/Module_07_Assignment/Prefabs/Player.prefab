@@ -869,10 +869,10 @@ GameObject:
   - component: {fileID: 450646728078591186}
   - component: {fileID: 3919576780820438890}
   - component: {fileID: 3765804838806304322}
-  - component: {fileID: 6996320578590425016}
   - component: {fileID: 2837059077615762876}
   - component: {fileID: 9133258079834302277}
   - component: {fileID: 4570872025238429167}
+  - component: {fileID: 3922530817894772719}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -930,7 +930,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &3919576780820438890
 MonoBehaviour:
@@ -970,21 +970,6 @@ MonoBehaviour:
     m_Bits: 64
   playerGrab: {fileID: 3919576780820438890}
   jumpForce: 8
---- !u!114 &6996320578590425016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6252944017648024916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ef0907b42be5c64d94f654b8df18b06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 12
-  moveAction: {fileID: -5811493528883913799, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
-  targeting: {fileID: 2837059077615762876}
 --- !u!114 &2837059077615762876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1032,6 +1017,21 @@ MonoBehaviour:
   targeting: {fileID: 2837059077615762876}
   lockOnAction: {fileID: -5963667083113595908, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
   currentMode: 1
+--- !u!114 &3922530817894772719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252944017648024916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ef0907b42be5c64d94f654b8df18b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  moveSpeed: 13
+  moveAction: {fileID: -5811493528883913799, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
+  targeting: {fileID: 2837059077615762876}
 --- !u!1 &6501399969352788955
 GameObject:
   m_ObjectHideFlags: 0
