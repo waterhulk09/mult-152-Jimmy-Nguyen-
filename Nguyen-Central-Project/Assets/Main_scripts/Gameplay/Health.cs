@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-
+        Debug.Log(gameObject.name + " took " + damage + " damage. ");
         healthSlider.value = currentHealth; 
 
         if (currentHealth <= 0)

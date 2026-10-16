@@ -991,6 +991,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 3142259607699627538}
+    - target: {fileID: 8059640686849585306, guid: 1f81a8ac99df36f4ba2bdb5c92f9d1f5, type: 3}
+      propertyPath: throwForce
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059640686849585306, guid: 1f81a8ac99df36f4ba2bdb5c92f9d1f5, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059640686849585306, guid: 1f81a8ac99df36f4ba2bdb5c92f9d1f5, type: 3}
+      propertyPath: attackCooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059640686849585306, guid: 1f81a8ac99df36f4ba2bdb5c92f9d1f5, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 7249824634951695907, guid: 09c512b6306b13c4691f86b5d543356c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1315,10 +1331,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowMan
       objectReference: {fileID: 0}
+    - target: {fileID: 5688743046868932798, guid: 64fd49461c0d1274d938a0c097b732e9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688743046868932798, guid: 64fd49461c0d1274d938a0c097b732e9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.097
+      objectReference: {fileID: 0}
     - target: {fileID: 6601945273771927055, guid: 64fd49461c0d1274d938a0c097b732e9, type: 3}
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 1683280322}
+    - target: {fileID: 8267091606615266381, guid: 64fd49461c0d1274d938a0c097b732e9, type: 3}
+      propertyPath: m_Size.z
+      value: 2.6004891
+      objectReference: {fileID: 0}
+    - target: {fileID: 8267091606615266381, guid: 64fd49461c0d1274d938a0c097b732e9, type: 3}
+      propertyPath: m_Center.x
+      value: 0.027999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 8267091606615266381, guid: 64fd49461c0d1274d938a0c097b732e9, type: 3}
+      propertyPath: m_Center.z
+      value: 0.5182445
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

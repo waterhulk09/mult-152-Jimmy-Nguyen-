@@ -1500,11 +1500,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyThrow
   player: {fileID: 0}
-  projectilePrefab: {fileID: 7249824634951695907, guid: d3f57ce7274cc5343bd91971925e367d, type: 3}
+  projectilePrefab: {fileID: 7249824634951695907, guid: 09c512b6306b13c4691f86b5d543356c, type: 3}
   throwPoint: {fileID: 2170768447637650530}
-  throwForce: 15
+  throwForce: 20
   attackRange: 8
-  attackCooldown: 2
+  attackCooldown: 9
 --- !u!65 &1335612914804548883
 BoxCollider:
   m_ObjectHideFlags: 0
