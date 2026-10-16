@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 6407239957968338021}
   - component: {fileID: 6669708045589769371}
   - component: {fileID: 1448523064062663651}
+  - component: {fileID: 2950657958212563812}
   m_Layer: 0
   m_Name: Da man
   m_TagString: Player
@@ -266,6 +267,21 @@ MonoBehaviour:
   targeting: {fileID: 6669708045589769371}
   lockOnAction: {fileID: -5963667083113595908, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
   currentMode: 1
+--- !u!114 &2950657958212563812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085760799250158380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef02707668465147863066b191e5522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  healthSlider: {fileID: 0}
+  maxHealth: 100
+  currentHealth: 100
 --- !u!1 &1619426032251568282
 GameObject:
   m_ObjectHideFlags: 0
