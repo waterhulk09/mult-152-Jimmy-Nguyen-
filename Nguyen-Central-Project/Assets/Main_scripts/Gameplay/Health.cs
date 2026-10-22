@@ -52,6 +52,7 @@ private void UpdateHealthUI()
     void Death()
     {
         Debug.Log(gameObject.name + " You are dead as hell.");
-        Destroy(gameObject);
+        GameManager.Instance.GameOver();
+       // Destroy(gameObject);
     }
 }

@@ -113,7 +113,8 @@ public class PlayerTargeting : MonoBehaviour
 
         if (currentIndex >= enemies.Count)
         {
-            currentIndex = 0;
+            ClearTarget();
+            return;
         }
 
         previousTarget = CurrentTarget;
@@ -127,4 +128,23 @@ public class PlayerTargeting : MonoBehaviour
             r.material.SetColor("_BaseColor", Color.cyan);
         }
     }
+
+   public void ClearTarget()
+    {
+        if(previousTarget != null)
+        {
+            Renderer OldR = previousTarget.GetComponent<Renderer>();
+
+            if (OldR != null)
+            {
+                OldR.material.SetColor("_BaseColor", gray73);
+            }
+        }
+    
+    currentIndex = -1;
+     previousTarget = null;
+     IsLockedOn = false;
+    Debug.Log("Target Cleared");
+    }
+
 }
