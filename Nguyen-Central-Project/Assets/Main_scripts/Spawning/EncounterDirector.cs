@@ -1,29 +1,28 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+
 public class EncounterDirector : MonoBehaviour
 {
-   
     [Header("Profiles")]
     [SerializeField] private List<SpawnProfile> spawnProfiles = new();
-    
-    [Header("SpawnPoint")]
-     [SerializeField] private List<EnemySpawnPoint> spawnPoints = new();
-    
-    [Header("Difficulty settings")]
-     [SerializeField] private float fastKillThreshold = 10f;
-     [SerializeField] private float slowKillThreshold = 30f;
-     [SerializeField] private int minDifficultyBonus = -3;
-     [SerializeField] private int maxDifficultyBonus = 10;
 
-private readonly List<GameObject> activeEnemies = new();
-private float encounterStartTime;
-private int difficultyModifier;
-public int Current {get; private set;}
-public int AliveEnemies => activeEnemies.Count;
+    [Header("Spawn Points")]
+    [SerializeField] private List<EnemySpawnPoint> spawnPoints = new();
 
-private void Start()
+    [Header("Difficulty Setting")]
+    [SerializeField] private float fastKillThreshold = 10f;
+    [SerializeField] private float slowKillThreshold = 30f;
+    [SerializeField] private int minDifficultyBonus = -3;
+    [SerializeField] private int maxDifficultyBonus = 10;
+
+    private readonly List<GameObject> activeEnemies = new();
+    private float encounterStartTime;
+    private int difficultyModifier;
+    public int CurrentEncounter {get; private set;}
+    public int AliveEnemies => activeEnemies.Count;
+
+    private void Start()
     {
         
     }
@@ -36,29 +35,49 @@ private void Start()
             SpawnProfile profile = GetRandomProfile();
             SpawnEncounter(profile);
             encounterStartTime = Time.time;
-           yield return new WaitUntil(() => activeEnemies.Count == 0);
-            EvaluatePreformance();
-            yield return new WaitForSeconds(ProfiledSegment.cooldownAfterClear);
+
+            yield return new WaitUntil(() => activeEnemies.Count == 0);
+            EvaluatePerformance();
+            yield return new WaitForSeconds(profile.cooldownAfterClear);
         }
     }
 
-    private void SpawnEncounter()
+    private void SpawnEncounter(SpawnProfile profile)
     {
         if (profile == null)
         {
             return;
         }
 
-        int enemyCount = Random.Range(ProfiledSegment.minEnemies, profile.maxEnemies +1 );
+        int enemyCount = Random.Range(profile.minEnemies, profile.maxEnemies +1);
         enemyCount += difficultyModifier;
         enemyCount = Mathf.Max(1, enemyCount);
+        Debug.Log($"Encounter: {CurrentEncounter}" + $"Enemies: {enemyCount}" + $"Difficulty Bolus: {difficultyModifier}");
 
         for (int i = 0; i < enemyCount; i++)
         {
             SpawnEnemy(profile);
-
         }
         RefreshTargeting();
     }
 
+    private void SpawnEnemy(SpawnProfile profile)
+    {
+        
+    }
+
+    private void EvaluatePerformance()
+    {
+        
+    }
+
+    private SpawnProfile GetRandomProfile()
+    {
+        return spawnProfiles[Random.Range(0, spawnProfiles.Count)];
+    }
+
+    private void RefreshTargeting()
+    {
+        
+    }
 }
