@@ -1,4 +1,6 @@
+using System.Threading;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class EnemyThrow : MonoBehaviour
 {
@@ -10,27 +12,46 @@ public class EnemyThrow : MonoBehaviour
 
     [Header("Settings")]
     public float throwForce = 15f;
-    public float attackRange = 8f;
     public float attackCooldown = 2f;
 
     private float timer;
 
-    void Update()
+   private void Start()
+    {
+        timer = attackCooldown;
+    }
+
+   private void Update()
     {
         timer += Time.deltaTime;
+    }
 
-        float distance = Vector3.Distance(transform.position, player.position);
-
-        if (distance <= attackRange && timer >= attackCooldown)
+    public void Attack()
+    {
+        if (timer < attackCooldown)
         {
-            ThrowProjectile();
-
-            timer = 0f;
+            return;
         }
+
+        timer = 0f;
+
+        ThrowProjectile();
     }
 
     void ThrowProjectile()
-    {
+    {        
+        if (throwPoint == null)
+        {
+            Debug.LogWarning("Throw Point not assigned!");
+            return;
+        }
+
+        if (projectilePrefab == null)
+        {
+            Debug.LogWarning("Projectile Prefab not assigned!");
+            return;
+        }
+
         GameObject projectile = Instantiate(projectilePrefab, throwPoint.position, Quaternion.identity);
 
         Rigidbody rb = projectile.GetComponent<Rigidbody>();

@@ -1,38 +1,36 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
 public class TargetUI : MonoBehaviour
 {
     [Header("Setup")]
-   public PlayerTargeting playerTargeting;
-   public GameObject targetPanel;
+    public PlayerTargeting playerTargeting;
+    public GameObject targetPanel;
+    public TMP_Text targetNameText;
+    public TMP_Text targetHealthText;
+    public Slider targetHealthBar;
 
-   public TMP_Text targetNameText;
-   public TMP_Text targetHealthText;
-   public Slider targetHealthBar;
-
-void Update()
+    void Update()
     {
-        updateTargetUI();
+        UpdateTargetUI();
     }
 
-void updateTargetUI()
+    void UpdateTargetUI()
     {
         if (playerTargeting.CurrentTarget == null)
         {
             targetPanel.SetActive(false);
             return;
-        }  
-    
-     targetPanel.SetActive(true);
-   
-   EnemyTarget target = playerTargeting.CurrentTarget;
-   EnemyHealth targetHealth = target.GetComponent<EnemyHealth>();
-   targetNameText.text = target.name;
-   targetHealthBar.maxValue = targetHealth.maxHealth;
-   targetHealthBar.value = targetHealth.health;
-   targetHealthText.text = targetHealth.health + " / " + targetHealth.maxHealth;
-   
+        }
+
+        targetPanel.SetActive(true);
+
+        EnemyTarget target = playerTargeting.CurrentTarget;
+        EnemyHealth tHealth = target.GetComponent<EnemyHealth>();
+        targetNameText.text = target.name;
+        targetHealthBar.maxValue = tHealth.maxHealth;
+        targetHealthBar.value = tHealth.health;
+        targetHealthText.text = tHealth.health + " / " + tHealth.maxHealth;
     }
 }
-

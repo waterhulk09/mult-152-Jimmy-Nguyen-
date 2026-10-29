@@ -1,24 +1,22 @@
 using UnityEngine;
 using TMPro;
+using System;
+
 public class FloatingDamageText : MonoBehaviour
 {
-public float moveSpeed = 2f;
-public float lifeTime = 1.5f;
+    [Header("Settings")]
+    public float moveSpeed = 2f;
+    public float lifeTime = 1.5f;
 
-private TextMeshProUGUI damageText;
+    private TextMeshProUGUI damageText;
 
-public void SetDamage(int damage)
+    private void Awake()
     {
-        damageText.text = damage.ToString();
+        damageText = GetComponentInChildren<TextMeshProUGUI>();
     }
 
-private void Awake()
+    public void SetDamage(int damage)
     {
-       damageText = GetComponentInChildren<TextMeshProUGUI>();
-    }
-
-    public void setDamage(int damage)
-    { 
         damageText.text = damage.ToString();
     }
 
@@ -28,12 +26,17 @@ private void Awake()
 
         lifeTime -= Time.deltaTime;
 
-        if(lifeTime <= 0)
+        if (lifeTime <= 0)
         {
             Destroy(gameObject);
         }
     }
-    
 
+    void LateUpdate()
+    {
+        if (Camera.main != null)
+        {
+            transform.forward = Camera.main.transform.forward;
+        }
+    }
 }
-
