@@ -190,10 +190,10 @@ GameObject:
   - component: {fileID: 2153661530647049961}
   - component: {fileID: 7182771798344177770}
   - component: {fileID: 82632846198697873}
-  - component: {fileID: 7030243415039174729}
-  - component: {fileID: 8882552450411784386}
-  - component: {fileID: 3963281089640350373}
-  - component: {fileID: 7473466742684215637}
+  - component: {fileID: 7205365275579382978}
+  - component: {fileID: 5650558798562161347}
+  - component: {fileID: 424618026415248970}
+  - component: {fileID: 9064966736209713447}
   m_Layer: 0
   m_Name: Enemy_Base
   m_TagString: Enemy
@@ -299,7 +299,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7030243415039174729
+--- !u!114 &7205365275579382978
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -308,18 +308,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3245442473729459289}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27a5b7514d72b324b8a4a8054414d527, type: 3}
+  m_Script: {fileID: 11500000, guid: 24debc44aa5ff124191d786d3c42e918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHealth: 50
-  health: 50
   healthSlider: {fileID: 3948884382516077354}
+  health: 50
+  maxHealth: 50
   damageTextPrefab: {fileID: 1261110237504064057, guid: 4f070dd8108e72146865f735f543a2fc, type: 3}
   damageTextSpawnPoint: {fileID: 96498885625566771}
-  deathEffect: {fileID: 0}
-  destroyDelay: 2
-  flashDuration: 0.1
---- !u!114 &8882552450411784386
+--- !u!114 &5650558798562161347
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -328,12 +325,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3245442473729459289}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f16d43d4b1e2b041844c0048259eb58, type: 3}
+  m_Script: {fileID: 11500000, guid: 90cddb88550219f4980d0209e43705ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyTarget
   normalColor: {r: 0.7294, g: 0.7294, b: 0.7294, a: 1}
   targetedColor: {r: 1, g: 0, b: 0, a: 1}
---- !u!114 &3963281089640350373
+--- !u!114 &424618026415248970
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -342,15 +339,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3245442473729459289}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6bc86bf210e8dc48853803f1c76e954, type: 3}
+  m_Script: {fileID: 11500000, guid: 0544acc24e0b3884383cbaadf875db01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyThrow
   player: {fileID: 0}
-  projectilePrefab: {fileID: 526018633756803623, guid: 9155b459deddcce46b4f3a6bed6ef03d, type: 3}
+  projectilePrefab: {fileID: 7249824634951695907, guid: d3f57ce7274cc5343bd91971925e367d, type: 3}
   throwPoint: {fileID: 8309056403756990181}
   throwForce: 15
   attackCooldown: 2
---- !u!114 &7473466742684215637
+--- !u!114 &9064966736209713447
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -359,13 +356,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3245442473729459289}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08a585170f44a574d9d6791c839308de, type: 3}
+  m_Script: {fileID: 11500000, guid: 3049a60df0f9c464facf66ab5ba62dd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   player: {fileID: 0}
   agent: {fileID: 0}
-  enemyThrow: {fileID: 3963281089640350373}
-  enemyHealth: {fileID: 7030243415039174729}
+  enemyThrow: {fileID: 424618026415248970}
+  enemyHealth: {fileID: 7205365275579382978}
   useNavMesh: 0
   moveSpeed: 3.5
   rotationSpeed: 10

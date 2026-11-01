@@ -52,6 +52,20 @@ public class EnemyThrow : MonoBehaviour
             return;
         }
 
+        if (player == null)
+        {
+            GameObject playerobj = GameObject.FindGameObjectWithTag("Player");
+            if(playerobj!= null)
+            {
+                player = playerobj.transform;
+            }
+            else
+            {
+                Debug.LogWarning("player not found");
+                return;
+            }
+        }
+
         GameObject projectile = Instantiate(projectilePrefab, throwPoint.position, Quaternion.identity);
 
         Rigidbody rb = projectile.GetComponent<Rigidbody>();

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf4298dfd40d054984c10589d7fece2, type: 3}
+  m_Name: NormalProfile
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnProfile
+  profileName: 
+  enemyTypes:
+  - {fileID: 11400000, guid: 5164800a2978a444fa21ad6d9f7925ec, type: 2}
+  - {fileID: 11400000, guid: 825fa69e2bc218b488f225d3bf59c043, type: 2}
+  - {fileID: 11400000, guid: 0400f48fa7ca0f84d950f2ed3caf0c88, type: 2}
+  minEnemies: 1
+  maxEnemies: 5
+  cooldownAfterClear: 10
