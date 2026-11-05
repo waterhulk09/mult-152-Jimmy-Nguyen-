@@ -48,6 +48,18 @@ public class ThirdPersonCamera : MonoBehaviour
             return;
         }
 
+
+if (target != null)
+        {
+            target.rotation = Quaternion.Euler(0f, currentYaw, 0f);
+        }
+
+if (targeting != null && targeting.IsLockedOn && targeting.LockedTarget != null)
+        {
+            transform.LookAt(targeting.LockedTarget.transform.position + Vector3.up * 1.5f);
+            return;
+        }
+        
         transform.position = target.position + offset;
         transform.LookAt(target.position + Vector3.up * 1.5f);
     }
