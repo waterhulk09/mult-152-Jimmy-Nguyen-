@@ -1,18 +1,16 @@
 using UnityEngine;
 using System.Collections.Generic;
+
 [CreateAssetMenu(fileName = "SpawnProfile", menuName = "Scriptable Objects/SpawnProfile")]
 public class SpawnProfile : ScriptableObject
 {
     public string profileName;
-    [Header("Enemy types")]
 
+    [Header("Possible Enemies")]
     public List<EnemyType> enemyTypes;
-
     public int minEnemies = 1;
-
     public int maxEnemies = 5;
 
-    [Header("timing")]
-
+    [Header("Timing")]
     public float cooldownAfterClear = 10f;
 }

@@ -9,12 +9,14 @@ public class EncounterDirector : MonoBehaviour
 
     [Header("Spawn Points")]
     [SerializeField] private List<EnemySpawnPoint> spawnPoints = new();
+    [SerializeField] private float minSpawnDistance = 2;
 
     [Header("Difficulty Setting")]
     [SerializeField] private float fastKillThreshold = 10f;
     [SerializeField] private float slowKillThreshold = 30f;
     [SerializeField] private int minDifficultyBonus = -3;
     [SerializeField] private int maxDifficultyBonus = 10;
+
 
     private readonly List<GameObject> activeEnemies = new();
     private float encounterStartTime;
@@ -52,7 +54,7 @@ public class EncounterDirector : MonoBehaviour
         int enemyCount = Random.Range(profile.minEnemies, profile.maxEnemies +1);
         enemyCount += difficultyModifier;
         enemyCount = Mathf.Max(1, enemyCount);
-        Debug.Log($"Encounter: {CurrentEncounter}" + $"Enemies: {enemyCount}" + $"Difficulty Bonus: {difficultyModifier}");
+        Debug.Log($"Encounter: {CurrentEncounter}" + $"Enemies: {enemyCount}" + $"Difficulty Bolus: {difficultyModifier}");
 
         for (int i = 0; i < enemyCount; i++)
         {
@@ -69,30 +71,74 @@ public class EncounterDirector : MonoBehaviour
         }
 
         EnemyType enemyType = profile.enemyTypes[Random.Range(0, profile.enemyTypes.Count)];
+
         EnemySpawnPoint spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
-        GameObject enemy = Instantiate (enemyType.enemyPrefab,spawnPoint.transform.position, spawnPoint.transform.rotation);
+
+        GameObject enemy = Instantiate(enemyType.enemyPrefab, GetValidSpawnPosition(spawnPoint), spawnPoint.transform.rotation);
+
+        CapsuleCollider capsule = enemy.GetComponent<CapsuleCollider>();
+
+        if (capsule != null)
+        {
+            Vector3 pos = enemy.transform.position;
+            pos.y += capsule.height * 0.5f;
+            enemy.transform.position = pos;
+        }
+
         activeEnemies.Add(enemy);
+
         ScaleEnemy(enemy);
+
         StartCoroutine(TrackEnemy(enemy));
 
     }
 
-    private IEnumerator TrackEnemy(GameObject enemy)
+    private Vector3 GetValidSpawnPosition(EnemySpawnPoint spawnPoint)
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            Vector3 candidate = spawnPoint.GetSpawnPosition();
+
+            Collider[] overlaps = Physics.OverlapSphere(candidate, minSpawnDistance);
+
+            bool blocked = false;
+
+            foreach (Collider col in overlaps)
+            {
+                if (col.GetComponent<EnemyHealth>() != null)
+                {
+                    blocked = true;
+                    break;
+                }
+            }
+
+            if (!blocked)
+            {
+                return candidate;
+            }
+        }
+        return spawnPoint.GetSpawnPosition();
+    }
+
+    private IEnumerator TrackEnemy( GameObject enemy)
     {
         yield return new WaitUntil( () => enemy == null);
+
         activeEnemies.Remove(enemy);
     }
-    
+
     private void ScaleEnemy(GameObject enemy)
     {
         EnemyHealth health = enemy.GetComponent<EnemyHealth>();
+
         if (health != null)
         {
             int bonus = Mathf.Max(0, difficultyModifier * 10);
 
             health.maxHealth += bonus;
+            health.health = health.maxHealth;
 
-            if(health.healthSlider !=null)
+            if (health.healthSlider != null)
             {
                 health.healthSlider.maxValue = health.maxHealth;
                 health.healthSlider.value = health.health;
@@ -103,16 +149,19 @@ public class EncounterDirector : MonoBehaviour
     private void EvaluatePerformance()
     {
         float clearTime = Time.time - encounterStartTime;
+        Debug.Log($"Encounter Clear Time: {clearTime}");
 
         if (clearTime < fastKillThreshold)
         {
             difficultyModifier++;
         }
-        else if( clearTime > slowKillThreshold )
+        else if ( clearTime > slowKillThreshold)
         {
             difficultyModifier--;
         }
+
         difficultyModifier = Mathf.Clamp(difficultyModifier, minDifficultyBonus, maxDifficultyBonus);
+        Debug.Log($"Difficulty Modifier: {difficultyModifier}");
     }
 
     private SpawnProfile GetRandomProfile()
@@ -124,7 +173,7 @@ public class EncounterDirector : MonoBehaviour
     {
         PlayerTargeting targeting = FindAnyObjectByType<PlayerTargeting>();
 
-        if(targeting != null)
+        if (targeting != null)
         {
             targeting.RefreshTargets();
         }
