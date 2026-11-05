@@ -220,6 +220,7 @@ MonoBehaviour:
   moveSpeed: 5
   moveAction: {fileID: -5811493528883913799, guid: 931db36a16196dc4da785f86c20126f1, type: 3}
   targeting: {fileID: 8176865420023345635}
+  moveReference: {fileID: 2144204897505556182}
 --- !u!114 &7657659917652671825
 MonoBehaviour:
   m_ObjectHideFlags: 0
