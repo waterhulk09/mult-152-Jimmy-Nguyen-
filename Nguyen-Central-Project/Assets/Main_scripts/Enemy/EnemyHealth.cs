@@ -9,26 +9,40 @@ public class EnemyHealth : MonoBehaviour
     public int health = 50;
     public int maxHealth = 50;
 
-  [Header("Text Damage")]
-public GameObject damageTextPrefab;
-public Transform damageTextSpawnPoint;
+    [Header("Text Damage")]
+    public GameObject damageTextPrefab;
+    public Transform damageTextSpawnPoint;
 
+    // Event that AudioFeedback and DamageFlash can listen to
+    public event System.Action<int> OnHealthChanged;
 
     void Start()
     {
         health = maxHealth;
 
-        healthSlider.maxValue = maxHealth;
-        healthSlider.value = health;
+        if (healthSlider != null)
+        {
+            healthSlider.maxValue = maxHealth;
+            healthSlider.value = health;
+        }
     }
 
     public void TakeDamage(int damage)
     {
         health -= damage;
-        healthSlider.value = health;
+        health = Mathf.Clamp(health, 0, maxHealth);
+
+        if (healthSlider != null)
+        {
+            healthSlider.value = health;
+        }
+
         ShowDamageText(damage);
 
-        Debug.Log(gameObject.name + "took " + damage + " damage. ");
+        // Notify any subscribed scripts (like AudioFeedback and DamageFlash)
+        OnHealthChanged?.Invoke(health);
+
+        Debug.Log(gameObject.name + " took " + damage + " damage.");
 
         if (health <= 0)
         {
@@ -39,7 +53,7 @@ public Transform damageTextSpawnPoint;
 
     void ShowDamageText(int damage)
     {
-        if(damageTextPrefab == null)
+        if (damageTextPrefab == null || damageTextSpawnPoint == null)
         {
             return;
         }
@@ -48,7 +62,7 @@ public Transform damageTextSpawnPoint;
 
         FloatingDamageText floatingText = text.GetComponent<FloatingDamageText>();
 
-        if(floatingText != null)
+        if (floatingText != null)
         {
             floatingText.SetDamage(damage);
         }

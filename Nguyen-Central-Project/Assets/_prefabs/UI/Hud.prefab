@@ -2617,9 +2617,9 @@ GameObject:
   m_Component:
   - component: {fileID: 94555296449264649}
   - component: {fileID: 2393413686820119444}
-  - component: {fileID: 8436613541587553095}
   - component: {fileID: 7631604200750961936}
   - component: {fileID: 3048654482531178672}
+  - component: {fileID: 4094945422711589586}
   m_Layer: 5
   m_Name: Hud
   m_TagString: Untagged
@@ -2661,23 +2661,6 @@ MonoBehaviour:
   targetInfoText: {fileID: 7249424580457583748}
   playerJump: {fileID: 0}
   targeting: {fileID: 0}
---- !u!114 &8436613541587553095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6088782602459647820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5581cc55a7b07e145a3a2978f00ca971, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TargetUI
-  playerTargeting: {fileID: 0}
-  targetPanel: {fileID: 2989632562989693713}
-  targetNameText: {fileID: 7249424580457583748}
-  targetHealthText: {fileID: 7948425190525832206}
-  targetHealthBar: {fileID: 5794933923197830591}
 --- !u!114 &7631604200750961936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2708,9 +2691,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   loseScreen: {fileID: 5603701012609067561}
-  pauseScreen: {fileID: 3368917996986934452}
-  winScreen: {fileID: 3890794378838588704}
-  playerHealth: {fileID: 0}
+--- !u!114 &4094945422711589586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6088782602459647820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c5de7173c091574cb95bc2021957abe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TargetUI
+  playerTargeting: {fileID: 0}
+  targetPanel: {fileID: 0}
+  targetNameText: {fileID: 7249424580457583748}
+  targetHealthText: {fileID: 7948425190525832206}
+  targetHealthBar: {fileID: 5794933923197830591}
 --- !u!1 &6199781814368550861
 GameObject:
   m_ObjectHideFlags: 0

@@ -2007,15 +2007,15 @@ PrefabInstance:
       objectReference: {fileID: 1570775204}
     - target: {fileID: 2144204897505556182, guid: f2a01129e3d9f5d4abe746e70ea9dd53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.32
       objectReference: {fileID: 0}
     - target: {fileID: 2144204897505556182, guid: f2a01129e3d9f5d4abe746e70ea9dd53, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.14
       objectReference: {fileID: 0}
     - target: {fileID: 2144204897505556182, guid: f2a01129e3d9f5d4abe746e70ea9dd53, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 2144204897505556182, guid: f2a01129e3d9f5d4abe746e70ea9dd53, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2044,6 +2044,18 @@ PrefabInstance:
     - target: {fileID: 2144204897505556182, guid: f2a01129e3d9f5d4abe746e70ea9dd53, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052309260465817133, guid: f2a01129e3d9f5d4abe746e70ea9dd53, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052309260465817133, guid: f2a01129e3d9f5d4abe746e70ea9dd53, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052309260465817133, guid: f2a01129e3d9f5d4abe746e70ea9dd53, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3011,7 +3023,7 @@ GameObject:
   - component: {fileID: 2065689768}
   - component: {fileID: 2065689767}
   - component: {fileID: 2065689766}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
