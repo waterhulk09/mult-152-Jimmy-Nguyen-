@@ -288,6 +288,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4264117204995553995, guid: b68af938f7dfeb84b90225b003a1f7af, type: 3}
+      propertyPath: flashDuration
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 6694332596067758441, guid: b68af938f7dfeb84b90225b003a1f7af, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -473,6 +477,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDamageEffects
   damageOverlay: {fileID: 156866243}
   fadeSpeed: 3
+--- !u!137 &1187963071 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1791998787353515348, guid: f2a01129e3d9f5d4abe746e70ea9dd53, type: 3}
+  m_PrefabInstance: {fileID: 1608331255}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1387725130
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,9 +894,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aa541108db6c7746af0052a0b9981d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageFlash
+  targetRenderer: {fileID: 1187963071}
+  flashColor: {r: 0.8962264, g: 0.57916516, b: 0.7123368, a: 1}
+  flashDuration: 0.4
+--- !u!114 &1399663912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837235812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa541108db6c7746af0052a0b9981d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageFlash
   targetRenderer: {fileID: 544101782}
-  flashColor: {r: 0.6132076, g: 0.43979225, b: 0.19379672, a: 1}
-  flashDuration: 0.1
+  flashColor: {r: 0.9339623, g: 0.6035511, b: 0.69275516, a: 1}
+  flashDuration: 0.4
 --- !u!1001 &1475829871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1026,6 +1050,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 296445742161248952, guid: f2a01129e3d9f5d4abe746e70ea9dd53, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1399663903}
+    - targetCorrespondingSourceObject: {fileID: 296445742161248952, guid: f2a01129e3d9f5d4abe746e70ea9dd53, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1399663912}
   m_SourcePrefab: {fileID: 100100000, guid: f2a01129e3d9f5d4abe746e70ea9dd53, type: 3}
 --- !u!1 &1618785487
 GameObject:
