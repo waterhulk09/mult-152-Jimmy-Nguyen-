@@ -1,74 +1,71 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 public class PlayerThrow : MonoBehaviour
 {
     public InputActionReference throwAction;
-
     public PlayerGrab playerGrab;
+    public float throwForce = 20f;
 
+    [Header("Animation")]
+    public Animator animator;
+    public string throwTriggerName = "Throw";
 
-    public float throwForce =20f;
-
-    void Update()
+    private void OnEnable()
     {
-        if (throwAction.action.triggered)
+        if (throwAction != null && throwAction.action != null)
+        {
+            throwAction.action.Enable();
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (throwAction != null && throwAction.action != null)
+        {
+            throwAction.action.Disable();
+        }
+    }
+
+    private void Update()
+    {
+        if (throwAction != null && throwAction.action != null && throwAction.action.triggered)
         {
             ThrowObject();
         }
     }
 
-
-void ThrowObject()
-{
-        /*if (playerGrab.HeldObject == null) return;
-    
-    GrabObject item = playerGrab.HeldObject.GetComponent<GrabObject>();
-
-if (!item.canbeThrown) return;
-
-Rigidbody rb = playerGrab.HeldObject.GetComponent<Rigidbody>();
-
-
-
-playerGrab.ReleaseHeldObject();
-
-
-if (rb = null) return;
-
- rb.isKinematic = false;
-
- Vector3 throwDirection;
-
-throwDirection = transform.forward;
-
-rb.AddForce(throwDirection * throwForce, ForceMode.Impulse);*/
-   
-
-    if (playerGrab.HeldObject == null) 
+    private void ThrowObject()
     {
-    Debug.Log("No Object held");
-    return;
-        } 
+        if (playerGrab == null || playerGrab.HeldObject == null)
+        {
+            Debug.Log("No Object held");
+            return;
+        }
 
+        GrabObject item = playerGrab.HeldObject.GetComponent<GrabObject>();
+        if (item == null || !item.canbeThrown)
+        {
+            Debug.Log((item != null ? item.itemName : "Object") + " Can't be thrown");
+            return;
+        }
 
-    GrabObject item = playerGrab.HeldObject.GetComponent<GrabObject>();
+        Rigidbody rb = playerGrab.HeldObject.GetComponent<Rigidbody>();
+        if (rb == null)
+        {
+            Debug.Log("Object has no RB!");
+            return;
+        }
 
-    if (!item.canbeThrown)
-    {
-        Debug.Log(item.itemName + " Can't be thrown");
-        return;
-    }
-    Rigidbody rb = playerGrab.HeldObject.GetComponent<Rigidbody>();
+        if (animator != null && !string.IsNullOrEmpty(throwTriggerName))
+        {
+            animator.ResetTrigger(throwTriggerName);
+            animator.SetTrigger(throwTriggerName);
+        }
 
-    if(rb == null)
-    {
-        Debug.Log("Object has no RB!");
-        return;
+        playerGrab.ReleaseHeldObject();
 
-    }
-    playerGrab.ReleaseHeldObject();
-
-    rb.isKinematic = false;
-    rb.AddForce(transform.forward * throwForce, ForceMode.Impulse);
+        rb.isKinematic = false;
+        rb.AddForce(transform.forward * throwForce, ForceMode.Impulse);
     }
 }

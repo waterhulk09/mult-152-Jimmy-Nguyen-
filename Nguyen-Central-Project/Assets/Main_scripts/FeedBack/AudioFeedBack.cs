@@ -9,19 +9,25 @@ public class AudioFeedback : MonoBehaviour
     private Health playerHealth;
     private EnemyHealth enemyHealth;
 
+    private int lastHealth;
+    private bool isInitialized = false;
+
     void OnEnable()
     {
-    
-        playerHealth = GetComponent<Health>();
+        playerHealth = GetComponentInParent<Health>();
         if (playerHealth != null)
         {
-            playerHealth.OnHealthChanged += OnHealthChanged;
+            playerHealth.OnHealthChanged += HandleHealthChanged;
+            lastHealth = playerHealth.currentHealth;
+            isInitialized = true;
         }
 
-        enemyHealth = GetComponent<EnemyHealth>();
+        enemyHealth = GetComponentInParent<EnemyHealth>();
         if (enemyHealth != null)
         {
-            enemyHealth.OnHealthChanged += OnHealthChanged;
+            enemyHealth.OnHealthChanged += HandleHealthChanged;
+            lastHealth = enemyHealth.health;
+            isInitialized = true;
         }
     }
 
@@ -29,24 +35,41 @@ public class AudioFeedback : MonoBehaviour
     {
         if (playerHealth != null)
         {
-            playerHealth.OnHealthChanged -= OnHealthChanged;
+            playerHealth.OnHealthChanged -= HandleHealthChanged;
         }
 
         if (enemyHealth != null)
         {
-            enemyHealth.OnHealthChanged -= OnHealthChanged;
+            enemyHealth.OnHealthChanged -= HandleHealthChanged;
         }
     }
 
-    void OnHealthChanged(int currentHealth)
+    void HandleHealthChanged(int currentHealth)
     {
-        if (currentHealth > 0)
+        if (!isInitialized)
         {
-            audioSource.PlayOneShot(damageClip);
+            lastHealth = currentHealth;
+            isInitialized = true;
+            return;
         }
-        else
+
+        // Only play damage sound if health actually went down
+        if (currentHealth < lastHealth && currentHealth > 0)
         {
-            audioSource.PlayOneShot(deathClip);
+            if (audioSource != null && damageClip != null)
+            {
+                audioSource.PlayOneShot(damageClip);
+            }
         }
+        // Only play death sound if health dropped to 0 or below
+        else if (currentHealth <= 0 && lastHealth > 0)
+        {
+            if (deathClip != null)
+            {
+                AudioSource.PlayClipAtPoint(deathClip, transform.position);
+            }
+        }
+
+        lastHealth = currentHealth;
     }
 }

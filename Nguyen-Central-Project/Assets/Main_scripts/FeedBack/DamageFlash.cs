@@ -5,10 +5,13 @@ public class DamageFlash : MonoBehaviour
     public Renderer targetRenderer;
     public Color flashColor = Color.red;
     public float flashDuration = 0.1f;
-    Color originalColor;
 
+    private Color originalColor;
     private Health playerHealth;
     private EnemyHealth enemyHealth;
+
+    private int lastHealth;
+    private bool isInitialized = false;
 
     void Start()
     {
@@ -20,16 +23,20 @@ public class DamageFlash : MonoBehaviour
 
     void OnEnable()
     {
-        playerHealth = GetComponent<Health>();
+        playerHealth = GetComponentInParent<Health>();
         if (playerHealth != null)
         {
-            playerHealth.OnHealthChanged += Flash;
+            playerHealth.OnHealthChanged += HandleHealthChanged;
+            lastHealth = playerHealth.currentHealth;
+            isInitialized = true;
         }
 
-        enemyHealth = GetComponent<EnemyHealth>();
+        enemyHealth = GetComponentInParent<EnemyHealth>();
         if (enemyHealth != null)
         {
-            enemyHealth.OnHealthChanged += Flash;
+            enemyHealth.OnHealthChanged += HandleHealthChanged;
+            lastHealth = enemyHealth.health;
+            isInitialized = true;
         }
     }
 
@@ -37,22 +44,35 @@ public class DamageFlash : MonoBehaviour
     {
         if (playerHealth != null)
         {
-            playerHealth.OnHealthChanged -= Flash;
+            playerHealth.OnHealthChanged -= HandleHealthChanged;
         }
 
         if (enemyHealth != null)
         {
-            enemyHealth.OnHealthChanged -= Flash;
+            enemyHealth.OnHealthChanged -= HandleHealthChanged;
         }
     }
 
-    void Flash(int currentHealth)
+    void HandleHealthChanged(int currentHealth)
     {
-        if (currentHealth > 0)
+        if (!isInitialized)
         {
-            StopAllCoroutines();
-            StartCoroutine(FlashRoutine());
+            lastHealth = currentHealth;
+            isInitialized = true;
+            return;
         }
+
+        // Only flash when health actually decreases
+        if (currentHealth < lastHealth && currentHealth > 0)
+        {
+            if (targetRenderer != null)
+            {
+                StopAllCoroutines();
+                StartCoroutine(FlashRoutine());
+            }
+        }
+
+        lastHealth = currentHealth;
     }
 
     System.Collections.IEnumerator FlashRoutine()

@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
     [Header("Health Setting")]
     public int maxHealth = 100;
     public int currentHealth;
-
+     public int CurrentHealth => currentHealth;
     [Header("Damage")]
     [SerializeField] private PlayerDamageEffects damageEffects;
 
@@ -55,6 +55,19 @@ public class Health : MonoBehaviour
         UpdateHealthUI();
     }
 
+public void SetHealth(int value)
+{
+    currentHealth = Mathf.Clamp(value, 0, maxHealth);
+
+    UpdateHealthUI();
+    OnHealthChanged?.Invoke(currentHealth);
+
+    if (currentHealth <= 0)
+    {
+        Death();
+    }
+}
+
     private void UpdateHealthUI()
     {
         healthSlider.value = currentHealth;
@@ -66,11 +79,12 @@ public class Health : MonoBehaviour
         // Notify any subscribed scripts (like AudioFeedback) that health changed
         OnHealthChanged?.Invoke(currentHealth);
     }
-
+    
     void Death()
     {
         Debug.Log(gameObject.name + " died");
         GameManager.Instance.GameOver();
         //Destroy(gameObject);
     }
+    
 }

@@ -55,14 +55,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.21052632
-        functionName: SpawnRock
-        data: 
-        objectReferenceParameter: {fileID: 2602275567576852682, guid: 379eee520f1df224b8641dbe3f206b14, type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
